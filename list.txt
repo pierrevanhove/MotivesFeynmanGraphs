@@ -1,0 +1,12 @@
+jupyter nbconvert --to html Identity.ipynb
+jupyter nbconvert --to html PF-2sunset.ipynb
+jupyter nbconvert --to html PF-3sunset.ipynb
+jupyter nbconvert --to html PF-4sunset.ipynb
+jupyter nbconvert --to html PF-5sunset.ipynb
+jupyter nbconvert --to html PF-DoubleBox.ipynb
+jupyter nbconvert --to html PF-Kite.ipynb
+jupyter nbconvert --to html PF-Pentabox.ipynb
+jupyter nbconvert --to html PF-Tardigrade.ipynb
+jupyter nbconvert --to html PF-icecream-2loop.ipynb
+jupyter nbconvert --to html PF-icecream-3loop.ipynb
+jupyter nbconvert --to html PF-triangle.ipynb
