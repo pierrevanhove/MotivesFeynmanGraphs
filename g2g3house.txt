@@ -1,0 +1,1830 @@
+(* In this file we give the coefficients of the family of the elliptic curve for the House graph*)
+(* y^2=4*x^3-g2(t)*x-g3(t)*)
+(* The scalar product between the momenta p, k,q and r are denoted as p.r etc*)
+g2 = 4*((2*m3^2*m4^2*k . p*k . r - 2*m3^2*m5^2*k . p*k . r - 
+        8*m3^2*m4^2*k . q*k . r + 8*m3^2*m5^2*k . q*k . r - 
+        4*m3^4*(k . r)^2 + 4*m3^2*t*k . p*(k . r)^2 - 
+        16*m3^2*t*k . q*(k . r)^2 - 2*m4^4*k . k*p . q + 
+        4*m4^2*m5^2*k . k*p . q - 2*m5^4*k . k*p . q + 
+        4*m3^2*m4^2*k . r*p . q - 4*m4^4*k . r*p . q - 
+        4*m3^2*m5^2*k . r*p . q + 4*m4^2*m5^2*k . r*p . q - 
+        4*m4^2*t*k . k*k . r*p . q + 4*m5^2*t*k . k*k . r*p . q + 
+        4*m3^2*t*(k . r)^2*p . q - 8*m4^2*t*(k . r)^2*p . q + 
+        8*t^2*k . q*(k . r)^2*p . q - 2*m3^2*m4^2*k . k*p . r + 
+        2*m3^2*m5^2*k . k*p . r + 2*m3^4*k . r*p . r - 
+        2*m3^2*m4^2*k . r*p . r - 2*m3^2*t*k . k*k . r*p . r + 
+        4*m3^2*t*k . q*k . r*p . r + 4*m4^2*t*k . q*k . r*p . r - 
+        4*t^2*k . k*k . q*k . r*p . r + 4*m4^4*k . k*q . q - 
+        8*m4^2*m5^2*k . k*q . q + 4*m5^4*k . k*q . q - 
+        8*m3^2*m4^2*k . r*q . q + 8*m4^4*k . r*q . q + 
+        8*m3^2*m5^2*k . r*q . q - 8*m4^2*m5^2*k . r*q . q + 
+        8*m4^2*t*k . k*k . r*q . q - 8*m5^2*t*k . k*k . r*q . q + 
+        2*m4^2*t*k . p*k . r*q . q - 2*m5^2*t*k . p*k . r*q . q - 
+        8*m4^2*t*k . q*k . r*q . q + 8*m5^2*t*k . q*k . r*q . q - 
+        8*m3^2*t*(k . r)^2*q . q + 16*m4^2*t*(k . r)^2*q . q + 
+        4*t^2*k . p*(k . r)^2*q . q - 16*t^2*k . q*(k . r)^2*q . q + 
+        4*t^2*(k . r)^2*p . q*q . q - 2*m4^2*t*k . k*p . r*q . q + 
+        2*m5^2*t*k . k*p . r*q . q + 2*m3^2*t*k . r*p . r*q . q - 
+        2*m4^2*t*k . r*p . r*q . q - 2*t^2*k . k*k . r*p . r*q . q - 
+        4*t^2*(k . r)^2*(q . q)^2 + 8*m3^2*m4^2*k . k*q . r - 
+        8*m3^2*m5^2*k . k*q . r - 8*m3^4*k . r*q . r + 
+        8*m3^2*m4^2*k . r*q . r + 8*m3^2*t*k . k*k . r*q . r + 
+        4*m3^2*t*k . p*k . r*q . r + 4*m4^2*t*k . p*k . r*q . r - 
+        4*t^2*k . k*k . p*k . r*q . r - 16*m3^2*t*k . q*k . r*q . r - 
+        16*m4^2*t*k . q*k . r*q . r + 16*t^2*k . k*k . q*k . r*q . r - 
+        4*m4^2*t*k . k*p . q*q . r + 4*m5^2*t*k . k*p . q*q . r + 
+        4*m3^2*t*k . r*p . q*q . r - 4*m4^2*t*k . r*p . q*q . r - 
+        4*t^2*k . k*k . r*p . q*q . r + 2*m3^4*p . r*q . r - 
+        4*m3^2*m4^2*p . r*q . r + 2*m4^4*p . r*q . r - 4*m3^2*t*k . k*p . r*
+         q . r - 4*m4^2*t*k . k*p . r*q . r + 2*t^2*(k . k)^2*p . r*q . r + 
+        8*m4^2*t*k . k*q . q*q . r - 8*m5^2*t*k . k*q . q*q . r - 
+        8*m3^2*t*k . r*q . q*q . r + 8*m4^2*t*k . r*q . q*q . r + 
+        8*t^2*k . k*k . r*q . q*q . r - 4*m3^4*(q . r)^2 + 
+        8*m3^2*m4^2*(q . r)^2 - 4*m4^4*(q . r)^2 + 8*m3^2*t*k . k*(q . r)^2 + 
+        8*m4^2*t*k . k*(q . r)^2 - 4*t^2*(k . k)^2*(q . r)^2 + 
+        4*m3^4*k . k*r . r + 2*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+        8*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 2*m3^2*t*k . p*k . r*
+         r . r - 8*m3^2*t*k . q*k . r*r . r - 2*m3^4*p . q*r . r + 
+        4*m3^2*m4^2*p . q*r . r - 2*m4^4*p . q*r . r + 4*m5^2*t*k . k*p . q*
+         r . r - 2*t^2*(k . k)^2*p . q*r . r - 4*t*(m3^2 - m4^2 + t*k . k)*
+         k . q*p . q*r . r + 4*m3^2*t*k . r*p . q*r . r - 
+        4*m4^2*t*k . r*p . q*r . r - 4*t^2*k . k*k . r*p . q*r . r - 
+        2*m3^2*t*k . k*p . r*r . r + 4*m3^4*q . q*r . r - 
+        8*m3^2*m4^2*q . q*r . r + 4*m4^4*q . q*r . r - 8*m5^2*t*k . k*q . q*
+         r . r + 4*t^2*(k . k)^2*q . q*r . r + 2*t*(-m3^2 + m4^2 - t*k . k)*
+         k . p*q . q*r . r + 8*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+        8*m3^2*t*k . r*q . q*r . r + 8*m4^2*t*k . r*q . q*r . r + 
+        8*t^2*k . k*k . r*q . q*r . r + 2*t^2*k . p*k . r*q . q*r . r - 
+        8*t^2*k . q*k . r*q . q*r . r - 4*t^2*k . k*p . q*q . q*r . r - 
+        2*t^2*k . k*p . r*q . q*r . r + 4*t^2*k . k*(q . q)^2*r . r + 
+        8*m3^2*t*k . k*q . r*r . r - 4*t^2*k . k*p . q*q . r*r . r + 
+        8*t^2*k . k*q . q*q . r*r . r - 2*t^2*k . k*p . q*(r . r)^2 + 
+        4*t^2*k . k*q . q*(r . r)^2 + 4*t*k . q*k . r*p . q*
+         (m4^2 - m5^2 + t*r . r) - 2*(m3^2 - m4^2 + t*k . k)*k . q*p . r*
+         (m4^2 - m5^2 + t*r . r) + 2*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*
+         (m4^2 - m5^2 + t*r . r) + 8*(m3^2 - m4^2 + t*k . k)*k . q*q . r*
+         (m4^2 - m5^2 + t*r . r) + 2*k . p*k . q*((m4^2 - m5^2)^2 + 
+          4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*r . r + 
+          t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+        4*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r)))*(6*m3^2*m4^2*k . p*k . r - 
+        6*m3^2*m5^2*k . p*k . r - 8*m3^2*m4^2*k . q*k . r + 
+        8*m3^2*m5^2*k . q*k . r - 4*m3^4*(k . r)^2 + 12*m3^2*t*k . p*
+         (k . r)^2 - 16*m3^2*t*k . q*(k . r)^2 + 2*m4^4*k . k*p . p - 
+        4*m4^2*m5^2*k . k*p . p + 2*m5^4*k . k*p . p - 
+        4*m3^2*m4^2*k . r*p . p + 4*m4^4*k . r*p . p + 
+        4*m3^2*m5^2*k . r*p . p - 4*m4^2*m5^2*k . r*p . p + 
+        4*m4^2*t*k . k*k . r*p . p - 4*m5^2*t*k . k*k . r*p . p - 
+        4*m3^2*t*(k . r)^2*p . p + 8*m4^2*t*(k . r)^2*p . p + 
+        4*t^2*k . p*(k . r)^2*p . p - 8*t^2*k . q*(k . r)^2*p . p - 
+        6*m4^4*k . k*p . q + 12*m4^2*m5^2*k . k*p . q - 6*m5^4*k . k*p . q + 
+        12*m3^2*m4^2*k . r*p . q - 12*m4^4*k . r*p . q - 
+        12*m3^2*m5^2*k . r*p . q + 12*m4^2*m5^2*k . r*p . q - 
+        12*m4^2*t*k . k*k . r*p . q + 12*m5^2*t*k . k*k . r*p . q + 
+        12*m3^2*t*(k . r)^2*p . q - 24*m4^2*t*(k . r)^2*p . q - 
+        16*t^2*k . p*(k . r)^2*p . q + 24*t^2*k . q*(k . r)^2*p . q + 
+        4*t^2*(k . r)^2*p . p*p . q - 8*t^2*(k . r)^2*(p . q)^2 - 
+        6*m3^2*m4^2*k . k*p . r + 6*m3^2*m5^2*k . k*p . r + 
+        6*m3^4*k . r*p . r - 6*m3^2*m4^2*k . r*p . r - 6*m3^2*t*k . k*k . r*
+         p . r - 8*m3^2*t*k . p*k . r*p . r - 8*m4^2*t*k . p*k . r*p . r + 
+        8*t^2*k . k*k . p*k . r*p . r + 12*m3^2*t*k . q*k . r*p . r + 
+        12*m4^2*t*k . q*k . r*p . r - 12*t^2*k . k*k . q*k . r*p . r - 
+        2*m4^2*t*k . k*p . p*p . r + 2*m5^2*t*k . k*p . p*p . r + 
+        2*m3^2*t*k . r*p . p*p . r - 2*m4^2*t*k . r*p . p*p . r - 
+        2*t^2*k . k*k . r*p . p*p . r + 8*m4^2*t*k . k*p . q*p . r - 
+        8*m5^2*t*k . k*p . q*p . r - 8*m3^2*t*k . r*p . q*p . r + 
+        8*m4^2*t*k . r*p . q*p . r + 8*t^2*k . k*k . r*p . q*p . r - 
+        2*m3^4*(p . r)^2 + 4*m3^2*m4^2*(p . r)^2 - 2*m4^4*(p . r)^2 + 
+        4*m3^2*t*k . k*(p . r)^2 + 4*m4^2*t*k . k*(p . r)^2 - 
+        2*t^2*(k . k)^2*(p . r)^2 + 4*m4^4*k . k*q . q - 
+        8*m4^2*m5^2*k . k*q . q + 4*m5^4*k . k*q . q - 
+        8*m3^2*m4^2*k . r*q . q + 8*m4^4*k . r*q . q + 
+        8*m3^2*m5^2*k . r*q . q - 8*m4^2*m5^2*k . r*q . q + 
+        8*m4^2*t*k . k*k . r*q . q - 8*m5^2*t*k . k*k . r*q . q + 
+        6*m4^2*t*k . p*k . r*q . q - 6*m5^2*t*k . p*k . r*q . q - 
+        8*m4^2*t*k . q*k . r*q . q + 8*m5^2*t*k . q*k . r*q . q - 
+        8*m3^2*t*(k . r)^2*q . q + 16*m4^2*t*(k . r)^2*q . q + 
+        12*t^2*k . p*(k . r)^2*q . q - 16*t^2*k . q*(k . r)^2*q . q - 
+        4*t^2*(k . r)^2*p . p*q . q + 12*t^2*(k . r)^2*p . q*q . q - 
+        6*m4^2*t*k . k*p . r*q . q + 6*m5^2*t*k . k*p . r*q . q + 
+        6*m3^2*t*k . r*p . r*q . q - 6*m4^2*t*k . r*p . r*q . q - 
+        6*t^2*k . k*k . r*p . r*q . q - 4*t^2*(k . r)^2*(q . q)^2 + 
+        8*m3^2*m4^2*k . k*q . r - 8*m3^2*m5^2*k . k*q . r - 
+        8*m3^4*k . r*q . r + 8*m3^2*m4^2*k . r*q . r + 8*m3^2*t*k . k*k . r*
+         q . r + 12*m3^2*t*k . p*k . r*q . r + 12*m4^2*t*k . p*k . r*q . r - 
+        12*t^2*k . k*k . p*k . r*q . r - 16*m3^2*t*k . q*k . r*q . r - 
+        16*m4^2*t*k . q*k . r*q . r + 16*t^2*k . k*k . q*k . r*q . r + 
+        4*m4^2*t*k . k*p . p*q . r - 4*m5^2*t*k . k*p . p*q . r - 
+        4*m3^2*t*k . r*p . p*q . r + 4*m4^2*t*k . r*p . p*q . r + 
+        4*t^2*k . k*k . r*p . p*q . r - 12*m4^2*t*k . k*p . q*q . r + 
+        12*m5^2*t*k . k*p . q*q . r + 12*m3^2*t*k . r*p . q*q . r - 
+        12*m4^2*t*k . r*p . q*q . r - 12*t^2*k . k*k . r*p . q*q . r + 
+        6*m3^4*p . r*q . r - 12*m3^2*m4^2*p . r*q . r + 6*m4^4*p . r*q . r - 
+        12*m3^2*t*k . k*p . r*q . r - 12*m4^2*t*k . k*p . r*q . r + 
+        6*t^2*(k . k)^2*p . r*q . r + 8*m4^2*t*k . k*q . q*q . r - 
+        8*m5^2*t*k . k*q . q*q . r - 8*m3^2*t*k . r*q . q*q . r + 
+        8*m4^2*t*k . r*q . q*q . r + 8*t^2*k . k*k . r*q . q*q . r - 
+        4*m3^4*(q . r)^2 + 8*m3^2*m4^2*(q . r)^2 - 4*m4^4*(q . r)^2 + 
+        8*m3^2*t*k . k*(q . r)^2 + 8*m4^2*t*k . k*(q . r)^2 - 
+        4*t^2*(k . k)^2*(q . r)^2 + 4*m3^4*k . k*r . r + 
+        6*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+        8*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 6*m3^2*t*k . p*k . r*
+         r . r - 8*m3^2*t*k . q*k . r*r . r + 2*m3^4*p . p*r . r - 
+        4*m3^2*m4^2*p . p*r . r + 2*m4^4*p . p*r . r - 4*m5^2*t*k . k*p . p*
+         r . r + 2*t^2*(k . k)^2*p . p*r . r + 2*t*(-m3^2 + m4^2 - t*k . k)*
+         k . p*p . p*r . r + 4*t*(m3^2 - m4^2 + t*k . k)*k . q*p . p*r . r - 
+        4*m3^2*t*k . r*p . p*r . r + 4*m4^2*t*k . r*p . p*r . r + 
+        4*t^2*k . k*k . r*p . p*r . r - 6*m3^4*p . q*r . r + 
+        12*m3^2*m4^2*p . q*r . r - 6*m4^4*p . q*r . r + 
+        12*m5^2*t*k . k*p . q*r . r - 6*t^2*(k . k)^2*p . q*r . r - 
+        8*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r - 
+        12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r + 
+        12*m3^2*t*k . r*p . q*r . r - 12*m4^2*t*k . r*p . q*r . r - 
+        12*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*p . p*p . q*r . r + 
+        8*t^2*k . k*(p . q)^2*r . r - 6*m3^2*t*k . k*p . r*r . r - 
+        2*t^2*k . k*p . p*p . r*r . r + 8*t^2*k . k*p . q*p . r*r . r + 
+        4*m3^4*q . q*r . r - 8*m3^2*m4^2*q . q*r . r + 4*m4^4*q . q*r . r - 
+        8*m5^2*t*k . k*q . q*r . r + 4*t^2*(k . k)^2*q . q*r . r + 
+        6*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r + 
+        8*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+        8*m3^2*t*k . r*q . q*r . r + 8*m4^2*t*k . r*q . q*r . r + 
+        8*t^2*k . k*k . r*q . q*r . r + 6*t^2*k . p*k . r*q . q*r . r - 
+        8*t^2*k . q*k . r*q . q*r . r + 4*t^2*k . k*p . p*q . q*r . r - 
+        12*t^2*k . k*p . q*q . q*r . r - 6*t^2*k . k*p . r*q . q*r . r + 
+        4*t^2*k . k*(q . q)^2*r . r + 8*m3^2*t*k . k*q . r*r . r + 
+        4*t^2*k . k*p . p*q . r*r . r - 12*t^2*k . k*p . q*q . r*r . r + 
+        8*t^2*k . k*q . q*q . r*r . r + 2*t^2*k . k*p . p*(r . r)^2 - 
+        6*t^2*k . k*p . q*(r . r)^2 + 4*t^2*k . k*q . q*(r . r)^2 + 
+        2*t*k . p*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+        4*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+        8*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+        12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+        4*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) - 
+        6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) + 
+        6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) + 
+        8*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+        2*(k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 6*k . p*k . q*
+         ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+           r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+        4*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r))) - 
+      4*(-2*m3^2*m4^2*k . q*k . r + 2*m3^2*m5^2*k . q*k . r - 
+        m3^4*(k . r)^2 - 4*m3^2*t*k . q*(k . r)^2 + m4^4*k . k*q . q - 
+        2*m4^2*m5^2*k . k*q . q + m5^4*k . k*q . q - 2*m3^2*m4^2*k . r*
+         q . q + 2*m4^4*k . r*q . q + 2*m3^2*m5^2*k . r*q . q - 
+        2*m4^2*m5^2*k . r*q . q + 2*m4^2*t*k . k*k . r*q . q - 
+        2*m5^2*t*k . k*k . r*q . q - 2*m4^2*t*k . q*k . r*q . q + 
+        2*m5^2*t*k . q*k . r*q . q - 2*m3^2*t*(k . r)^2*q . q + 
+        4*m4^2*t*(k . r)^2*q . q - 4*t^2*k . q*(k . r)^2*q . q - 
+        t^2*(k . r)^2*(q . q)^2 + 2*m3^2*m4^2*k . k*q . r - 
+        2*m3^2*m5^2*k . k*q . r - 2*m3^4*k . r*q . r + 
+        2*m3^2*m4^2*k . r*q . r + 2*m3^2*t*k . k*k . r*q . r - 
+        4*m3^2*t*k . q*k . r*q . r - 4*m4^2*t*k . q*k . r*q . r + 
+        4*t^2*k . k*k . q*k . r*q . r + 2*m4^2*t*k . k*q . q*q . r - 
+        2*m5^2*t*k . k*q . q*q . r - 2*m3^2*t*k . r*q . q*q . r + 
+        2*m4^2*t*k . r*q . q*q . r + 2*t^2*k . k*k . r*q . q*q . r - 
+        m3^4*(q . r)^2 + 2*m3^2*m4^2*(q . r)^2 - m4^4*(q . r)^2 + 
+        2*m3^2*t*k . k*(q . r)^2 + 2*m4^2*t*k . k*(q . r)^2 - 
+        t^2*(k . k)^2*(q . r)^2 + m3^4*k . k*r . r + 
+        2*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r - 2*m3^2*t*k . q*k . r*
+         r . r + m3^4*q . q*r . r - 2*m3^2*m4^2*q . q*r . r + 
+        m4^4*q . q*r . r - 2*m5^2*t*k . k*q . q*r . r + 
+        t^2*(k . k)^2*q . q*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*
+         r . r - 2*m3^2*t*k . r*q . q*r . r + 2*m4^2*t*k . r*q . q*r . r + 
+        2*t^2*k . k*k . r*q . q*r . r - 2*t^2*k . q*k . r*q . q*r . r + 
+        t^2*k . k*(q . q)^2*r . r + 2*m3^2*t*k . k*q . r*r . r + 
+        2*t^2*k . k*q . q*q . r*r . r + t^2*k . k*q . q*(r . r)^2 + 
+        2*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+        (k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r)))*(2*m3^2*m4^2*k . p*k . r - 
+        2*m3^2*m5^2*k . p*k . r - 2*m3^2*m4^2*k . q*k . r + 
+        2*m3^2*m5^2*k . q*k . r - m3^4*(k . r)^2 + 4*m3^2*t*k . p*(k . r)^2 - 
+        4*m3^2*t*k . q*(k . r)^2 + m4^4*k . k*p . p - 2*m4^2*m5^2*k . k*
+         p . p + m5^4*k . k*p . p - 2*m3^2*m4^2*k . r*p . p + 
+        2*m4^4*k . r*p . p + 2*m3^2*m5^2*k . r*p . p - 
+        2*m4^2*m5^2*k . r*p . p + 2*m4^2*t*k . k*k . r*p . p - 
+        2*m5^2*t*k . k*k . r*p . p - 2*m3^2*t*(k . r)^2*p . p + 
+        4*m4^2*t*(k . r)^2*p . p + 4*t^2*k . p*(k . r)^2*p . p - 
+        4*t^2*k . q*(k . r)^2*p . p - t^2*(k . r)^2*(p . p)^2 - 
+        2*m4^4*k . k*p . q + 4*m4^2*m5^2*k . k*p . q - 2*m5^4*k . k*p . q + 
+        4*m3^2*m4^2*k . r*p . q - 4*m4^4*k . r*p . q - 
+        4*m3^2*m5^2*k . r*p . q + 4*m4^2*m5^2*k . r*p . q - 
+        4*m4^2*t*k . k*k . r*p . q + 4*m5^2*t*k . k*k . r*p . q + 
+        4*m3^2*t*(k . r)^2*p . q - 8*m4^2*t*(k . r)^2*p . q - 
+        8*t^2*k . p*(k . r)^2*p . q + 8*t^2*k . q*(k . r)^2*p . q + 
+        4*t^2*(k . r)^2*p . p*p . q - 4*t^2*(k . r)^2*(p . q)^2 - 
+        2*m3^2*m4^2*k . k*p . r + 2*m3^2*m5^2*k . k*p . r + 
+        2*m3^4*k . r*p . r - 2*m3^2*m4^2*k . r*p . r - 2*m3^2*t*k . k*k . r*
+         p . r - 4*m3^2*t*k . p*k . r*p . r - 4*m4^2*t*k . p*k . r*p . r + 
+        4*t^2*k . k*k . p*k . r*p . r + 4*m3^2*t*k . q*k . r*p . r + 
+        4*m4^2*t*k . q*k . r*p . r - 4*t^2*k . k*k . q*k . r*p . r - 
+        2*m4^2*t*k . k*p . p*p . r + 2*m5^2*t*k . k*p . p*p . r + 
+        2*m3^2*t*k . r*p . p*p . r - 2*m4^2*t*k . r*p . p*p . r - 
+        2*t^2*k . k*k . r*p . p*p . r + 4*m4^2*t*k . k*p . q*p . r - 
+        4*m5^2*t*k . k*p . q*p . r - 4*m3^2*t*k . r*p . q*p . r + 
+        4*m4^2*t*k . r*p . q*p . r + 4*t^2*k . k*k . r*p . q*p . r - 
+        m3^4*(p . r)^2 + 2*m3^2*m4^2*(p . r)^2 - m4^4*(p . r)^2 + 
+        2*m3^2*t*k . k*(p . r)^2 + 2*m4^2*t*k . k*(p . r)^2 - 
+        t^2*(k . k)^2*(p . r)^2 + m4^4*k . k*q . q - 2*m4^2*m5^2*k . k*
+         q . q + m5^4*k . k*q . q - 2*m3^2*m4^2*k . r*q . q + 
+        2*m4^4*k . r*q . q + 2*m3^2*m5^2*k . r*q . q - 
+        2*m4^2*m5^2*k . r*q . q + 2*m4^2*t*k . k*k . r*q . q - 
+        2*m5^2*t*k . k*k . r*q . q + 2*m4^2*t*k . p*k . r*q . q - 
+        2*m5^2*t*k . p*k . r*q . q - 2*m4^2*t*k . q*k . r*q . q + 
+        2*m5^2*t*k . q*k . r*q . q - 2*m3^2*t*(k . r)^2*q . q + 
+        4*m4^2*t*(k . r)^2*q . q + 4*t^2*k . p*(k . r)^2*q . q - 
+        4*t^2*k . q*(k . r)^2*q . q - 2*t^2*(k . r)^2*p . p*q . q + 
+        4*t^2*(k . r)^2*p . q*q . q - 2*m4^2*t*k . k*p . r*q . q + 
+        2*m5^2*t*k . k*p . r*q . q + 2*m3^2*t*k . r*p . r*q . q - 
+        2*m4^2*t*k . r*p . r*q . q - 2*t^2*k . k*k . r*p . r*q . q - 
+        t^2*(k . r)^2*(q . q)^2 + 2*m3^2*m4^2*k . k*q . r - 
+        2*m3^2*m5^2*k . k*q . r - 2*m3^4*k . r*q . r + 
+        2*m3^2*m4^2*k . r*q . r + 2*m3^2*t*k . k*k . r*q . r + 
+        4*m3^2*t*k . p*k . r*q . r + 4*m4^2*t*k . p*k . r*q . r - 
+        4*t^2*k . k*k . p*k . r*q . r - 4*m3^2*t*k . q*k . r*q . r - 
+        4*m4^2*t*k . q*k . r*q . r + 4*t^2*k . k*k . q*k . r*q . r + 
+        2*m4^2*t*k . k*p . p*q . r - 2*m5^2*t*k . k*p . p*q . r - 
+        2*m3^2*t*k . r*p . p*q . r + 2*m4^2*t*k . r*p . p*q . r + 
+        2*t^2*k . k*k . r*p . p*q . r - 4*m4^2*t*k . k*p . q*q . r + 
+        4*m5^2*t*k . k*p . q*q . r + 4*m3^2*t*k . r*p . q*q . r - 
+        4*m4^2*t*k . r*p . q*q . r - 4*t^2*k . k*k . r*p . q*q . r + 
+        2*m3^4*p . r*q . r - 4*m3^2*m4^2*p . r*q . r + 2*m4^4*p . r*q . r - 
+        4*m3^2*t*k . k*p . r*q . r - 4*m4^2*t*k . k*p . r*q . r + 
+        2*t^2*(k . k)^2*p . r*q . r + 2*m4^2*t*k . k*q . q*q . r - 
+        2*m5^2*t*k . k*q . q*q . r - 2*m3^2*t*k . r*q . q*q . r + 
+        2*m4^2*t*k . r*q . q*q . r + 2*t^2*k . k*k . r*q . q*q . r - 
+        m3^4*(q . r)^2 + 2*m3^2*m4^2*(q . r)^2 - m4^4*(q . r)^2 + 
+        2*m3^2*t*k . k*(q . r)^2 + 2*m4^2*t*k . k*(q . r)^2 - 
+        t^2*(k . k)^2*(q . r)^2 + m3^4*k . k*r . r + 
+        2*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+        2*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 2*m3^2*t*k . p*k . r*
+         r . r - 2*m3^2*t*k . q*k . r*r . r + m3^4*p . p*r . r - 
+        2*m3^2*m4^2*p . p*r . r + m4^4*p . p*r . r - 2*m5^2*t*k . k*p . p*
+         r . r + t^2*(k . k)^2*p . p*r . r + 2*t*(-m3^2 + m4^2 - t*k . k)*
+         k . p*p . p*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*k . q*p . p*r . r - 
+        2*m3^2*t*k . r*p . p*r . r + 2*m4^2*t*k . r*p . p*r . r + 
+        2*t^2*k . k*k . r*p . p*r . r + t^2*k . k*(p . p)^2*r . r - 
+        2*m3^4*p . q*r . r + 4*m3^2*m4^2*p . q*r . r - 2*m4^4*p . q*r . r + 
+        4*m5^2*t*k . k*p . q*r . r - 2*t^2*(k . k)^2*p . q*r . r - 
+        4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r - 
+        4*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r + 
+        4*m3^2*t*k . r*p . q*r . r - 4*m4^2*t*k . r*p . q*r . r - 
+        4*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*p . p*p . q*r . r + 
+        4*t^2*k . k*(p . q)^2*r . r - 2*m3^2*t*k . k*p . r*r . r - 
+        2*t^2*k . k*p . p*p . r*r . r + 4*t^2*k . k*p . q*p . r*r . r + 
+        m3^4*q . q*r . r - 2*m3^2*m4^2*q . q*r . r + m4^4*q . q*r . r - 
+        2*m5^2*t*k . k*q . q*r . r + t^2*(k . k)^2*q . q*r . r + 
+        2*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r + 
+        2*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+        2*m3^2*t*k . r*q . q*r . r + 2*m4^2*t*k . r*q . q*r . r + 
+        2*t^2*k . k*k . r*q . q*r . r + 2*t^2*k . p*k . r*q . q*r . r - 
+        2*t^2*k . q*k . r*q . q*r . r + 2*t^2*k . k*p . p*q . q*r . r - 
+        4*t^2*k . k*p . q*q . q*r . r - 2*t^2*k . k*p . r*q . q*r . r + 
+        t^2*k . k*(q . q)^2*r . r + 2*m3^2*t*k . k*q . r*r . r + 
+        2*t^2*k . k*p . p*q . r*r . r - 4*t^2*k . k*p . q*q . r*r . r + 
+        2*t^2*k . k*q . q*q . r*r . r + t^2*k . k*p . p*(r . r)^2 - 
+        2*t^2*k . k*p . q*(r . r)^2 + t^2*k . k*q . q*(r . r)^2 + 
+        2*t*k . p*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+        2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+        4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+        4*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+        2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) - 
+        2*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) + 
+        2*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) + 
+        2*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+        (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 2*k . p*k . q*
+         ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+           r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+        (k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r))) + 
+      (2*(6*m3^2*m4^2*k . p*k . r - 6*m3^2*m5^2*k . p*k . r - 
+         12*m3^2*m4^2*k . q*k . r + 12*m3^2*m5^2*k . q*k . r - 
+         6*m3^4*(k . r)^2 + 12*m3^2*t*k . p*(k . r)^2 - 
+         24*m3^2*t*k . q*(k . r)^2 + m4^4*k . k*p . p - 
+         2*m4^2*m5^2*k . k*p . p + m5^4*k . k*p . p - 2*m3^2*m4^2*k . r*
+          p . p + 2*m4^4*k . r*p . p + 2*m3^2*m5^2*k . r*p . p - 
+         2*m4^2*m5^2*k . r*p . p + 2*m4^2*t*k . k*k . r*p . p - 
+         2*m5^2*t*k . k*k . r*p . p - 2*m3^2*t*(k . r)^2*p . p + 
+         4*m4^2*t*(k . r)^2*p . p - 4*t^2*k . q*(k . r)^2*p . p - 
+         6*m4^4*k . k*p . q + 12*m4^2*m5^2*k . k*p . q - 6*m5^4*k . k*p . q + 
+         12*m3^2*m4^2*k . r*p . q - 12*m4^4*k . r*p . q - 
+         12*m3^2*m5^2*k . r*p . q + 12*m4^2*m5^2*k . r*p . q - 
+         12*m4^2*t*k . k*k . r*p . q + 12*m5^2*t*k . k*k . r*p . q + 
+         12*m3^2*t*(k . r)^2*p . q - 24*m4^2*t*(k . r)^2*p . q - 
+         8*t^2*k . p*(k . r)^2*p . q + 24*t^2*k . q*(k . r)^2*p . q - 
+         4*t^2*(k . r)^2*(p . q)^2 - 6*m3^2*m4^2*k . k*p . r + 
+         6*m3^2*m5^2*k . k*p . r + 6*m3^4*k . r*p . r - 
+         6*m3^2*m4^2*k . r*p . r - 6*m3^2*t*k . k*k . r*p . r - 
+         4*m3^2*t*k . p*k . r*p . r - 4*m4^2*t*k . p*k . r*p . r + 
+         4*t^2*k . k*k . p*k . r*p . r + 12*m3^2*t*k . q*k . r*p . r + 
+         12*m4^2*t*k . q*k . r*p . r - 12*t^2*k . k*k . q*k . r*p . r + 
+         4*m4^2*t*k . k*p . q*p . r - 4*m5^2*t*k . k*p . q*p . r - 
+         4*m3^2*t*k . r*p . q*p . r + 4*m4^2*t*k . r*p . q*p . r + 
+         4*t^2*k . k*k . r*p . q*p . r - m3^4*(p . r)^2 + 
+         2*m3^2*m4^2*(p . r)^2 - m4^4*(p . r)^2 + 2*m3^2*t*k . k*(p . r)^2 + 
+         2*m4^2*t*k . k*(p . r)^2 - t^2*(k . k)^2*(p . r)^2 + 
+         6*m4^4*k . k*q . q - 12*m4^2*m5^2*k . k*q . q + 6*m5^4*k . k*q . q - 
+         12*m3^2*m4^2*k . r*q . q + 12*m4^4*k . r*q . q + 
+         12*m3^2*m5^2*k . r*q . q - 12*m4^2*m5^2*k . r*q . q + 
+         12*m4^2*t*k . k*k . r*q . q - 12*m5^2*t*k . k*k . r*q . q + 
+         6*m4^2*t*k . p*k . r*q . q - 6*m5^2*t*k . p*k . r*q . q - 
+         12*m4^2*t*k . q*k . r*q . q + 12*m5^2*t*k . q*k . r*q . q - 
+         12*m3^2*t*(k . r)^2*q . q + 24*m4^2*t*(k . r)^2*q . q + 
+         12*t^2*k . p*(k . r)^2*q . q - 24*t^2*k . q*(k . r)^2*q . q - 
+         2*t^2*(k . r)^2*p . p*q . q + 12*t^2*(k . r)^2*p . q*q . q - 
+         6*m4^2*t*k . k*p . r*q . q + 6*m5^2*t*k . k*p . r*q . q + 
+         6*m3^2*t*k . r*p . r*q . q - 6*m4^2*t*k . r*p . r*q . q - 
+         6*t^2*k . k*k . r*p . r*q . q - 6*t^2*(k . r)^2*(q . q)^2 + 
+         12*m3^2*m4^2*k . k*q . r - 12*m3^2*m5^2*k . k*q . r - 
+         12*m3^4*k . r*q . r + 12*m3^2*m4^2*k . r*q . r + 
+         12*m3^2*t*k . k*k . r*q . r + 12*m3^2*t*k . p*k . r*q . r + 
+         12*m4^2*t*k . p*k . r*q . r - 12*t^2*k . k*k . p*k . r*q . r - 
+         24*m3^2*t*k . q*k . r*q . r - 24*m4^2*t*k . q*k . r*q . r + 
+         24*t^2*k . k*k . q*k . r*q . r + 2*m4^2*t*k . k*p . p*q . r - 
+         2*m5^2*t*k . k*p . p*q . r - 2*m3^2*t*k . r*p . p*q . r + 
+         2*m4^2*t*k . r*p . p*q . r + 2*t^2*k . k*k . r*p . p*q . r - 
+         12*m4^2*t*k . k*p . q*q . r + 12*m5^2*t*k . k*p . q*q . r + 
+         12*m3^2*t*k . r*p . q*q . r - 12*m4^2*t*k . r*p . q*q . r - 
+         12*t^2*k . k*k . r*p . q*q . r + 6*m3^4*p . r*q . r - 
+         12*m3^2*m4^2*p . r*q . r + 6*m4^4*p . r*q . r - 
+         12*m3^2*t*k . k*p . r*q . r - 12*m4^2*t*k . k*p . r*q . r + 
+         6*t^2*(k . k)^2*p . r*q . r + 12*m4^2*t*k . k*q . q*q . r - 
+         12*m5^2*t*k . k*q . q*q . r - 12*m3^2*t*k . r*q . q*q . r + 
+         12*m4^2*t*k . r*q . q*q . r + 12*t^2*k . k*k . r*q . q*q . r - 
+         6*m3^4*(q . r)^2 + 12*m3^2*m4^2*(q . r)^2 - 6*m4^4*(q . r)^2 + 
+         12*m3^2*t*k . k*(q . r)^2 + 12*m4^2*t*k . k*(q . r)^2 - 
+         6*t^2*(k . k)^2*(q . r)^2 + 6*m3^4*k . k*r . r + 
+         6*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+         12*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 6*m3^2*t*k . p*k . r*
+          r . r - 12*m3^2*t*k . q*k . r*r . r + m3^4*p . p*r . r - 
+         2*m3^2*m4^2*p . p*r . r + m4^4*p . p*r . r - 2*m5^2*t*k . k*p . p*
+          r . r + t^2*(k . k)^2*p . p*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*
+          k . q*p . p*r . r - 2*m3^2*t*k . r*p . p*r . r + 
+         2*m4^2*t*k . r*p . p*r . r + 2*t^2*k . k*k . r*p . p*r . r - 
+         6*m3^4*p . q*r . r + 12*m3^2*m4^2*p . q*r . r - 6*m4^4*p . q*r . r + 
+         12*m5^2*t*k . k*p . q*r . r - 6*t^2*(k . k)^2*p . q*r . r - 
+         4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r - 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r + 
+         12*m3^2*t*k . r*p . q*r . r - 12*m4^2*t*k . r*p . q*r . r - 
+         12*t^2*k . k*k . r*p . q*r . r + 4*t^2*k . k*(p . q)^2*r . r - 
+         6*m3^2*t*k . k*p . r*r . r + 4*t^2*k . k*p . q*p . r*r . r + 
+         6*m3^4*q . q*r . r - 12*m3^2*m4^2*q . q*r . r + 6*m4^4*q . q*r . r - 
+         12*m5^2*t*k . k*q . q*r . r + 6*t^2*(k . k)^2*q . q*r . r + 
+         6*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r + 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+         12*m3^2*t*k . r*q . q*r . r + 12*m4^2*t*k . r*q . q*r . r + 
+         12*t^2*k . k*k . r*q . q*r . r + 6*t^2*k . p*k . r*q . q*r . r - 
+         12*t^2*k . q*k . r*q . q*r . r + 2*t^2*k . k*p . p*q . q*r . r - 
+         12*t^2*k . k*p . q*q . q*r . r - 6*t^2*k . k*p . r*q . q*r . r + 
+         6*t^2*k . k*(q . q)^2*r . r + 12*m3^2*t*k . k*q . r*r . r + 
+         2*t^2*k . k*p . p*q . r*r . r - 12*t^2*k . k*p . q*q . r*r . r + 
+         12*t^2*k . k*q . q*q . r*r . r + t^2*k . k*p . p*(r . r)^2 - 
+         6*t^2*k . k*p . q*(r . r)^2 + 6*t^2*k . k*q . q*(r . r)^2 - 
+         2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+         4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+         12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+         2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) - 
+         6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) + 
+         6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) + 
+         12*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+         (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 6*k . p*k . q*
+          ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+            r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+         6*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)))*(-6*m3^2*m4^2*k . p*k . r + 
+         6*m3^2*m5^2*k . p*k . r + 12*m3^2*m4^2*k . q*k . r - 
+         12*m3^2*m5^2*k . q*k . r + 6*m3^4*(k . r)^2 - 12*m3^2*t*k . p*
+          (k . r)^2 + 24*m3^2*t*k . q*(k . r)^2 - m4^4*k . k*p . p + 
+         2*m4^2*m5^2*k . k*p . p - m5^4*k . k*p . p + 2*m3^2*m4^2*k . r*
+          p . p - 2*m4^4*k . r*p . p - 2*m3^2*m5^2*k . r*p . p + 
+         2*m4^2*m5^2*k . r*p . p - 2*m4^2*t*k . k*k . r*p . p + 
+         2*m5^2*t*k . k*k . r*p . p + 2*m3^2*t*(k . r)^2*p . p - 
+         4*m4^2*t*(k . r)^2*p . p + 4*t^2*k . q*(k . r)^2*p . p + 
+         6*m4^4*k . k*p . q - 12*m4^2*m5^2*k . k*p . q + 6*m5^4*k . k*p . q - 
+         12*m3^2*m4^2*k . r*p . q + 12*m4^4*k . r*p . q + 
+         12*m3^2*m5^2*k . r*p . q - 12*m4^2*m5^2*k . r*p . q + 
+         12*m4^2*t*k . k*k . r*p . q - 12*m5^2*t*k . k*k . r*p . q - 
+         12*m3^2*t*(k . r)^2*p . q + 24*m4^2*t*(k . r)^2*p . q + 
+         8*t^2*k . p*(k . r)^2*p . q - 24*t^2*k . q*(k . r)^2*p . q + 
+         4*t^2*(k . r)^2*(p . q)^2 + 6*m3^2*m4^2*k . k*p . r - 
+         6*m3^2*m5^2*k . k*p . r - 6*m3^4*k . r*p . r + 
+         6*m3^2*m4^2*k . r*p . r + 6*m3^2*t*k . k*k . r*p . r + 
+         4*m3^2*t*k . p*k . r*p . r + 4*m4^2*t*k . p*k . r*p . r - 
+         4*t^2*k . k*k . p*k . r*p . r - 12*m3^2*t*k . q*k . r*p . r - 
+         12*m4^2*t*k . q*k . r*p . r + 12*t^2*k . k*k . q*k . r*p . r - 
+         4*m4^2*t*k . k*p . q*p . r + 4*m5^2*t*k . k*p . q*p . r + 
+         4*m3^2*t*k . r*p . q*p . r - 4*m4^2*t*k . r*p . q*p . r - 
+         4*t^2*k . k*k . r*p . q*p . r + m3^4*(p . r)^2 - 
+         2*m3^2*m4^2*(p . r)^2 + m4^4*(p . r)^2 - 2*m3^2*t*k . k*(p . r)^2 - 
+         2*m4^2*t*k . k*(p . r)^2 + t^2*(k . k)^2*(p . r)^2 - 
+         6*m4^4*k . k*q . q + 12*m4^2*m5^2*k . k*q . q - 6*m5^4*k . k*q . q + 
+         12*m3^2*m4^2*k . r*q . q - 12*m4^4*k . r*q . q - 
+         12*m3^2*m5^2*k . r*q . q + 12*m4^2*m5^2*k . r*q . q - 
+         12*m4^2*t*k . k*k . r*q . q + 12*m5^2*t*k . k*k . r*q . q - 
+         6*m4^2*t*k . p*k . r*q . q + 6*m5^2*t*k . p*k . r*q . q + 
+         12*m4^2*t*k . q*k . r*q . q - 12*m5^2*t*k . q*k . r*q . q + 
+         12*m3^2*t*(k . r)^2*q . q - 24*m4^2*t*(k . r)^2*q . q - 
+         12*t^2*k . p*(k . r)^2*q . q + 24*t^2*k . q*(k . r)^2*q . q + 
+         2*t^2*(k . r)^2*p . p*q . q - 12*t^2*(k . r)^2*p . q*q . q + 
+         6*m4^2*t*k . k*p . r*q . q - 6*m5^2*t*k . k*p . r*q . q - 
+         6*m3^2*t*k . r*p . r*q . q + 6*m4^2*t*k . r*p . r*q . q + 
+         6*t^2*k . k*k . r*p . r*q . q + 6*t^2*(k . r)^2*(q . q)^2 - 
+         12*m3^2*m4^2*k . k*q . r + 12*m3^2*m5^2*k . k*q . r + 
+         12*m3^4*k . r*q . r - 12*m3^2*m4^2*k . r*q . r - 
+         12*m3^2*t*k . k*k . r*q . r - 12*m3^2*t*k . p*k . r*q . r - 
+         12*m4^2*t*k . p*k . r*q . r + 12*t^2*k . k*k . p*k . r*q . r + 
+         24*m3^2*t*k . q*k . r*q . r + 24*m4^2*t*k . q*k . r*q . r - 
+         24*t^2*k . k*k . q*k . r*q . r - 2*m4^2*t*k . k*p . p*q . r + 
+         2*m5^2*t*k . k*p . p*q . r + 2*m3^2*t*k . r*p . p*q . r - 
+         2*m4^2*t*k . r*p . p*q . r - 2*t^2*k . k*k . r*p . p*q . r + 
+         12*m4^2*t*k . k*p . q*q . r - 12*m5^2*t*k . k*p . q*q . r - 
+         12*m3^2*t*k . r*p . q*q . r + 12*m4^2*t*k . r*p . q*q . r + 
+         12*t^2*k . k*k . r*p . q*q . r - 6*m3^4*p . r*q . r + 
+         12*m3^2*m4^2*p . r*q . r - 6*m4^4*p . r*q . r + 
+         12*m3^2*t*k . k*p . r*q . r + 12*m4^2*t*k . k*p . r*q . r - 
+         6*t^2*(k . k)^2*p . r*q . r - 12*m4^2*t*k . k*q . q*q . r + 
+         12*m5^2*t*k . k*q . q*q . r + 12*m3^2*t*k . r*q . q*q . r - 
+         12*m4^2*t*k . r*q . q*q . r - 12*t^2*k . k*k . r*q . q*q . r + 
+         6*m3^4*(q . r)^2 - 12*m3^2*m4^2*(q . r)^2 + 6*m4^4*(q . r)^2 - 
+         12*m3^2*t*k . k*(q . r)^2 - 12*m4^2*t*k . k*(q . r)^2 + 
+         6*t^2*(k . k)^2*(q . r)^2 - 6*m3^4*k . k*r . r - 
+         6*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r - 
+         12*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r - 6*m3^2*t*k . p*k . r*
+          r . r + 12*m3^2*t*k . q*k . r*r . r - m3^4*p . p*r . r + 
+         2*m3^2*m4^2*p . p*r . r - m4^4*p . p*r . r + 2*m5^2*t*k . k*p . p*
+          r . r - t^2*(k . k)^2*p . p*r . r - 2*t*(m3^2 - m4^2 + t*k . k)*
+          k . q*p . p*r . r + 2*m3^2*t*k . r*p . p*r . r - 
+         2*m4^2*t*k . r*p . p*r . r - 2*t^2*k . k*k . r*p . p*r . r + 
+         6*m3^4*p . q*r . r - 12*m3^2*m4^2*p . q*r . r + 6*m4^4*p . q*r . r - 
+         12*m5^2*t*k . k*p . q*r . r + 6*t^2*(k . k)^2*p . q*r . r + 
+         4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r + 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r - 
+         12*m3^2*t*k . r*p . q*r . r + 12*m4^2*t*k . r*p . q*r . r + 
+         12*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*(p . q)^2*r . r + 
+         6*m3^2*t*k . k*p . r*r . r - 4*t^2*k . k*p . q*p . r*r . r - 
+         6*m3^4*q . q*r . r + 12*m3^2*m4^2*q . q*r . r - 6*m4^4*q . q*r . r + 
+         12*m5^2*t*k . k*q . q*r . r - 6*t^2*(k . k)^2*q . q*r . r - 
+         6*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r - 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r + 
+         12*m3^2*t*k . r*q . q*r . r - 12*m4^2*t*k . r*q . q*r . r - 
+         12*t^2*k . k*k . r*q . q*r . r - 6*t^2*k . p*k . r*q . q*r . r + 
+         12*t^2*k . q*k . r*q . q*r . r - 2*t^2*k . k*p . p*q . q*r . r + 
+         12*t^2*k . k*p . q*q . q*r . r + 6*t^2*k . k*p . r*q . q*r . r - 
+         6*t^2*k . k*(q . q)^2*r . r - 12*m3^2*t*k . k*q . r*r . r - 
+         2*t^2*k . k*p . p*q . r*r . r + 12*t^2*k . k*p . q*q . r*r . r - 
+         12*t^2*k . k*q . q*q . r*r . r - t^2*k . k*p . p*(r . r)^2 + 
+         6*t^2*k . k*p . q*(r . r)^2 - 6*t^2*k . k*q . q*(r . r)^2 + 
+         2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) + 
+         4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+         12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+         2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) + 
+         6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) - 
+         6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) - 
+         12*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) + 
+         (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 6*k . p*k . q*
+          ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+            r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 
+         6*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r))))/3 + 
+      (-6*m3^2*m4^2*k . p*k . r + 6*m3^2*m5^2*k . p*k . r + 
+         12*m3^2*m4^2*k . q*k . r - 12*m3^2*m5^2*k . q*k . r + 
+         6*m3^4*(k . r)^2 - 12*m3^2*t*k . p*(k . r)^2 + 
+         24*m3^2*t*k . q*(k . r)^2 - m4^4*k . k*p . p + 
+         2*m4^2*m5^2*k . k*p . p - m5^4*k . k*p . p + 2*m3^2*m4^2*k . r*
+          p . p - 2*m4^4*k . r*p . p - 2*m3^2*m5^2*k . r*p . p + 
+         2*m4^2*m5^2*k . r*p . p - 2*m4^2*t*k . k*k . r*p . p + 
+         2*m5^2*t*k . k*k . r*p . p + 2*m3^2*t*(k . r)^2*p . p - 
+         4*m4^2*t*(k . r)^2*p . p + 4*t^2*k . q*(k . r)^2*p . p + 
+         6*m4^4*k . k*p . q - 12*m4^2*m5^2*k . k*p . q + 6*m5^4*k . k*p . q - 
+         12*m3^2*m4^2*k . r*p . q + 12*m4^4*k . r*p . q + 
+         12*m3^2*m5^2*k . r*p . q - 12*m4^2*m5^2*k . r*p . q + 
+         12*m4^2*t*k . k*k . r*p . q - 12*m5^2*t*k . k*k . r*p . q - 
+         12*m3^2*t*(k . r)^2*p . q + 24*m4^2*t*(k . r)^2*p . q + 
+         8*t^2*k . p*(k . r)^2*p . q - 24*t^2*k . q*(k . r)^2*p . q + 
+         4*t^2*(k . r)^2*(p . q)^2 + 6*m3^2*m4^2*k . k*p . r - 
+         6*m3^2*m5^2*k . k*p . r - 6*m3^4*k . r*p . r + 
+         6*m3^2*m4^2*k . r*p . r + 6*m3^2*t*k . k*k . r*p . r + 
+         4*m3^2*t*k . p*k . r*p . r + 4*m4^2*t*k . p*k . r*p . r - 
+         4*t^2*k . k*k . p*k . r*p . r - 12*m3^2*t*k . q*k . r*p . r - 
+         12*m4^2*t*k . q*k . r*p . r + 12*t^2*k . k*k . q*k . r*p . r - 
+         4*m4^2*t*k . k*p . q*p . r + 4*m5^2*t*k . k*p . q*p . r + 
+         4*m3^2*t*k . r*p . q*p . r - 4*m4^2*t*k . r*p . q*p . r - 
+         4*t^2*k . k*k . r*p . q*p . r + m3^4*(p . r)^2 - 
+         2*m3^2*m4^2*(p . r)^2 + m4^4*(p . r)^2 - 2*m3^2*t*k . k*(p . r)^2 - 
+         2*m4^2*t*k . k*(p . r)^2 + t^2*(k . k)^2*(p . r)^2 - 
+         6*m4^4*k . k*q . q + 12*m4^2*m5^2*k . k*q . q - 6*m5^4*k . k*q . q + 
+         12*m3^2*m4^2*k . r*q . q - 12*m4^4*k . r*q . q - 
+         12*m3^2*m5^2*k . r*q . q + 12*m4^2*m5^2*k . r*q . q - 
+         12*m4^2*t*k . k*k . r*q . q + 12*m5^2*t*k . k*k . r*q . q - 
+         6*m4^2*t*k . p*k . r*q . q + 6*m5^2*t*k . p*k . r*q . q + 
+         12*m4^2*t*k . q*k . r*q . q - 12*m5^2*t*k . q*k . r*q . q + 
+         12*m3^2*t*(k . r)^2*q . q - 24*m4^2*t*(k . r)^2*q . q - 
+         12*t^2*k . p*(k . r)^2*q . q + 24*t^2*k . q*(k . r)^2*q . q + 
+         2*t^2*(k . r)^2*p . p*q . q - 12*t^2*(k . r)^2*p . q*q . q + 
+         6*m4^2*t*k . k*p . r*q . q - 6*m5^2*t*k . k*p . r*q . q - 
+         6*m3^2*t*k . r*p . r*q . q + 6*m4^2*t*k . r*p . r*q . q + 
+         6*t^2*k . k*k . r*p . r*q . q + 6*t^2*(k . r)^2*(q . q)^2 - 
+         12*m3^2*m4^2*k . k*q . r + 12*m3^2*m5^2*k . k*q . r + 
+         12*m3^4*k . r*q . r - 12*m3^2*m4^2*k . r*q . r - 
+         12*m3^2*t*k . k*k . r*q . r - 12*m3^2*t*k . p*k . r*q . r - 
+         12*m4^2*t*k . p*k . r*q . r + 12*t^2*k . k*k . p*k . r*q . r + 
+         24*m3^2*t*k . q*k . r*q . r + 24*m4^2*t*k . q*k . r*q . r - 
+         24*t^2*k . k*k . q*k . r*q . r - 2*m4^2*t*k . k*p . p*q . r + 
+         2*m5^2*t*k . k*p . p*q . r + 2*m3^2*t*k . r*p . p*q . r - 
+         2*m4^2*t*k . r*p . p*q . r - 2*t^2*k . k*k . r*p . p*q . r + 
+         12*m4^2*t*k . k*p . q*q . r - 12*m5^2*t*k . k*p . q*q . r - 
+         12*m3^2*t*k . r*p . q*q . r + 12*m4^2*t*k . r*p . q*q . r + 
+         12*t^2*k . k*k . r*p . q*q . r - 6*m3^4*p . r*q . r + 
+         12*m3^2*m4^2*p . r*q . r - 6*m4^4*p . r*q . r + 
+         12*m3^2*t*k . k*p . r*q . r + 12*m4^2*t*k . k*p . r*q . r - 
+         6*t^2*(k . k)^2*p . r*q . r - 12*m4^2*t*k . k*q . q*q . r + 
+         12*m5^2*t*k . k*q . q*q . r + 12*m3^2*t*k . r*q . q*q . r - 
+         12*m4^2*t*k . r*q . q*q . r - 12*t^2*k . k*k . r*q . q*q . r + 
+         6*m3^4*(q . r)^2 - 12*m3^2*m4^2*(q . r)^2 + 6*m4^4*(q . r)^2 - 
+         12*m3^2*t*k . k*(q . r)^2 - 12*m4^2*t*k . k*(q . r)^2 + 
+         6*t^2*(k . k)^2*(q . r)^2 - 6*m3^4*k . k*r . r - 
+         6*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r - 
+         12*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r - 6*m3^2*t*k . p*k . r*
+          r . r + 12*m3^2*t*k . q*k . r*r . r - m3^4*p . p*r . r + 
+         2*m3^2*m4^2*p . p*r . r - m4^4*p . p*r . r + 2*m5^2*t*k . k*p . p*
+          r . r - t^2*(k . k)^2*p . p*r . r - 2*t*(m3^2 - m4^2 + t*k . k)*
+          k . q*p . p*r . r + 2*m3^2*t*k . r*p . p*r . r - 
+         2*m4^2*t*k . r*p . p*r . r - 2*t^2*k . k*k . r*p . p*r . r + 
+         6*m3^4*p . q*r . r - 12*m3^2*m4^2*p . q*r . r + 6*m4^4*p . q*r . r - 
+         12*m5^2*t*k . k*p . q*r . r + 6*t^2*(k . k)^2*p . q*r . r + 
+         4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r + 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r - 
+         12*m3^2*t*k . r*p . q*r . r + 12*m4^2*t*k . r*p . q*r . r + 
+         12*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*(p . q)^2*r . r + 
+         6*m3^2*t*k . k*p . r*r . r - 4*t^2*k . k*p . q*p . r*r . r - 
+         6*m3^4*q . q*r . r + 12*m3^2*m4^2*q . q*r . r - 6*m4^4*q . q*r . r + 
+         12*m5^2*t*k . k*q . q*r . r - 6*t^2*(k . k)^2*q . q*r . r - 
+         6*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r - 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r + 
+         12*m3^2*t*k . r*q . q*r . r - 12*m4^2*t*k . r*q . q*r . r - 
+         12*t^2*k . k*k . r*q . q*r . r - 6*t^2*k . p*k . r*q . q*r . r + 
+         12*t^2*k . q*k . r*q . q*r . r - 2*t^2*k . k*p . p*q . q*r . r + 
+         12*t^2*k . k*p . q*q . q*r . r + 6*t^2*k . k*p . r*q . q*r . r - 
+         6*t^2*k . k*(q . q)^2*r . r - 12*m3^2*t*k . k*q . r*r . r - 
+         2*t^2*k . k*p . p*q . r*r . r + 12*t^2*k . k*p . q*q . r*r . r - 
+         12*t^2*k . k*q . q*q . r*r . r - t^2*k . k*p . p*(r . r)^2 + 
+         6*t^2*k . k*p . q*(r . r)^2 - 6*t^2*k . k*q . q*(r . r)^2 + 
+         2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) + 
+         4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+         12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+         2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) + 
+         6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) - 
+         6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) - 
+         12*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) + 
+         (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 6*k . p*k . q*
+          ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+            r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 
+         6*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)))^2/3)
+ 
+g3 = 4*((6*m3^2*m4^2*k . p*k . r - 6*m3^2*m5^2*k . p*k . r - 
+         8*m3^2*m4^2*k . q*k . r + 8*m3^2*m5^2*k . q*k . r - 
+         4*m3^4*(k . r)^2 + 12*m3^2*t*k . p*(k . r)^2 - 
+         16*m3^2*t*k . q*(k . r)^2 + 2*m4^4*k . k*p . p - 
+         4*m4^2*m5^2*k . k*p . p + 2*m5^4*k . k*p . p - 
+         4*m3^2*m4^2*k . r*p . p + 4*m4^4*k . r*p . p + 
+         4*m3^2*m5^2*k . r*p . p - 4*m4^2*m5^2*k . r*p . p + 
+         4*m4^2*t*k . k*k . r*p . p - 4*m5^2*t*k . k*k . r*p . p - 
+         4*m3^2*t*(k . r)^2*p . p + 8*m4^2*t*(k . r)^2*p . p + 
+         4*t^2*k . p*(k . r)^2*p . p - 8*t^2*k . q*(k . r)^2*p . p - 
+         6*m4^4*k . k*p . q + 12*m4^2*m5^2*k . k*p . q - 6*m5^4*k . k*p . q + 
+         12*m3^2*m4^2*k . r*p . q - 12*m4^4*k . r*p . q - 
+         12*m3^2*m5^2*k . r*p . q + 12*m4^2*m5^2*k . r*p . q - 
+         12*m4^2*t*k . k*k . r*p . q + 12*m5^2*t*k . k*k . r*p . q + 
+         12*m3^2*t*(k . r)^2*p . q - 24*m4^2*t*(k . r)^2*p . q - 
+         16*t^2*k . p*(k . r)^2*p . q + 24*t^2*k . q*(k . r)^2*p . q + 
+         4*t^2*(k . r)^2*p . p*p . q - 8*t^2*(k . r)^2*(p . q)^2 - 
+         6*m3^2*m4^2*k . k*p . r + 6*m3^2*m5^2*k . k*p . r + 
+         6*m3^4*k . r*p . r - 6*m3^2*m4^2*k . r*p . r - 6*m3^2*t*k . k*k . r*
+          p . r - 8*m3^2*t*k . p*k . r*p . r - 8*m4^2*t*k . p*k . r*p . r + 
+         8*t^2*k . k*k . p*k . r*p . r + 12*m3^2*t*k . q*k . r*p . r + 
+         12*m4^2*t*k . q*k . r*p . r - 12*t^2*k . k*k . q*k . r*p . r - 
+         2*m4^2*t*k . k*p . p*p . r + 2*m5^2*t*k . k*p . p*p . r + 
+         2*m3^2*t*k . r*p . p*p . r - 2*m4^2*t*k . r*p . p*p . r - 
+         2*t^2*k . k*k . r*p . p*p . r + 8*m4^2*t*k . k*p . q*p . r - 
+         8*m5^2*t*k . k*p . q*p . r - 8*m3^2*t*k . r*p . q*p . r + 
+         8*m4^2*t*k . r*p . q*p . r + 8*t^2*k . k*k . r*p . q*p . r - 
+         2*m3^4*(p . r)^2 + 4*m3^2*m4^2*(p . r)^2 - 2*m4^4*(p . r)^2 + 
+         4*m3^2*t*k . k*(p . r)^2 + 4*m4^2*t*k . k*(p . r)^2 - 
+         2*t^2*(k . k)^2*(p . r)^2 + 4*m4^4*k . k*q . q - 
+         8*m4^2*m5^2*k . k*q . q + 4*m5^4*k . k*q . q - 
+         8*m3^2*m4^2*k . r*q . q + 8*m4^4*k . r*q . q + 
+         8*m3^2*m5^2*k . r*q . q - 8*m4^2*m5^2*k . r*q . q + 
+         8*m4^2*t*k . k*k . r*q . q - 8*m5^2*t*k . k*k . r*q . q + 
+         6*m4^2*t*k . p*k . r*q . q - 6*m5^2*t*k . p*k . r*q . q - 
+         8*m4^2*t*k . q*k . r*q . q + 8*m5^2*t*k . q*k . r*q . q - 
+         8*m3^2*t*(k . r)^2*q . q + 16*m4^2*t*(k . r)^2*q . q + 
+         12*t^2*k . p*(k . r)^2*q . q - 16*t^2*k . q*(k . r)^2*q . q - 
+         4*t^2*(k . r)^2*p . p*q . q + 12*t^2*(k . r)^2*p . q*q . q - 
+         6*m4^2*t*k . k*p . r*q . q + 6*m5^2*t*k . k*p . r*q . q + 
+         6*m3^2*t*k . r*p . r*q . q - 6*m4^2*t*k . r*p . r*q . q - 
+         6*t^2*k . k*k . r*p . r*q . q - 4*t^2*(k . r)^2*(q . q)^2 + 
+         8*m3^2*m4^2*k . k*q . r - 8*m3^2*m5^2*k . k*q . r - 
+         8*m3^4*k . r*q . r + 8*m3^2*m4^2*k . r*q . r + 8*m3^2*t*k . k*k . r*
+          q . r + 12*m3^2*t*k . p*k . r*q . r + 12*m4^2*t*k . p*k . r*q . r - 
+         12*t^2*k . k*k . p*k . r*q . r - 16*m3^2*t*k . q*k . r*q . r - 
+         16*m4^2*t*k . q*k . r*q . r + 16*t^2*k . k*k . q*k . r*q . r + 
+         4*m4^2*t*k . k*p . p*q . r - 4*m5^2*t*k . k*p . p*q . r - 
+         4*m3^2*t*k . r*p . p*q . r + 4*m4^2*t*k . r*p . p*q . r + 
+         4*t^2*k . k*k . r*p . p*q . r - 12*m4^2*t*k . k*p . q*q . r + 
+         12*m5^2*t*k . k*p . q*q . r + 12*m3^2*t*k . r*p . q*q . r - 
+         12*m4^2*t*k . r*p . q*q . r - 12*t^2*k . k*k . r*p . q*q . r + 
+         6*m3^4*p . r*q . r - 12*m3^2*m4^2*p . r*q . r + 6*m4^4*p . r*q . r - 
+         12*m3^2*t*k . k*p . r*q . r - 12*m4^2*t*k . k*p . r*q . r + 
+         6*t^2*(k . k)^2*p . r*q . r + 8*m4^2*t*k . k*q . q*q . r - 
+         8*m5^2*t*k . k*q . q*q . r - 8*m3^2*t*k . r*q . q*q . r + 
+         8*m4^2*t*k . r*q . q*q . r + 8*t^2*k . k*k . r*q . q*q . r - 
+         4*m3^4*(q . r)^2 + 8*m3^2*m4^2*(q . r)^2 - 4*m4^4*(q . r)^2 + 
+         8*m3^2*t*k . k*(q . r)^2 + 8*m4^2*t*k . k*(q . r)^2 - 
+         4*t^2*(k . k)^2*(q . r)^2 + 4*m3^4*k . k*r . r + 
+         6*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+         8*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 6*m3^2*t*k . p*k . r*
+          r . r - 8*m3^2*t*k . q*k . r*r . r + 2*m3^4*p . p*r . r - 
+         4*m3^2*m4^2*p . p*r . r + 2*m4^4*p . p*r . r - 4*m5^2*t*k . k*p . p*
+          r . r + 2*t^2*(k . k)^2*p . p*r . r + 2*t*(-m3^2 + m4^2 - t*k . k)*
+          k . p*p . p*r . r + 4*t*(m3^2 - m4^2 + t*k . k)*k . q*p . p*r . r - 
+         4*m3^2*t*k . r*p . p*r . r + 4*m4^2*t*k . r*p . p*r . r + 
+         4*t^2*k . k*k . r*p . p*r . r - 6*m3^4*p . q*r . r + 
+         12*m3^2*m4^2*p . q*r . r - 6*m4^4*p . q*r . r + 
+         12*m5^2*t*k . k*p . q*r . r - 6*t^2*(k . k)^2*p . q*r . r - 
+         8*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r - 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r + 
+         12*m3^2*t*k . r*p . q*r . r - 12*m4^2*t*k . r*p . q*r . r - 
+         12*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*p . p*p . q*r . r + 
+         8*t^2*k . k*(p . q)^2*r . r - 6*m3^2*t*k . k*p . r*r . r - 
+         2*t^2*k . k*p . p*p . r*r . r + 8*t^2*k . k*p . q*p . r*r . r + 
+         4*m3^4*q . q*r . r - 8*m3^2*m4^2*q . q*r . r + 4*m4^4*q . q*r . r - 
+         8*m5^2*t*k . k*q . q*r . r + 4*t^2*(k . k)^2*q . q*r . r + 
+         6*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r + 
+         8*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+         8*m3^2*t*k . r*q . q*r . r + 8*m4^2*t*k . r*q . q*r . r + 
+         8*t^2*k . k*k . r*q . q*r . r + 6*t^2*k . p*k . r*q . q*r . r - 
+         8*t^2*k . q*k . r*q . q*r . r + 4*t^2*k . k*p . p*q . q*r . r - 
+         12*t^2*k . k*p . q*q . q*r . r - 6*t^2*k . k*p . r*q . q*r . r + 
+         4*t^2*k . k*(q . q)^2*r . r + 8*m3^2*t*k . k*q . r*r . r + 
+         4*t^2*k . k*p . p*q . r*r . r - 12*t^2*k . k*p . q*q . r*r . r + 
+         8*t^2*k . k*q . q*q . r*r . r + 2*t^2*k . k*p . p*(r . r)^2 - 
+         6*t^2*k . k*p . q*(r . r)^2 + 4*t^2*k . k*q . q*(r . r)^2 + 
+         2*t*k . p*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+         4*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+         8*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+         12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+         4*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) - 
+         6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) + 
+         6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) + 
+         8*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+         2*(k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 6*k . p*k . q*
+          ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+            r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+         4*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)))^2*(-2*m3^2*m4^2*k . q*k . r + 
+        2*m3^2*m5^2*k . q*k . r - m3^4*(k . r)^2 - 4*m3^2*t*k . q*(k . r)^2 + 
+        m4^4*k . k*q . q - 2*m4^2*m5^2*k . k*q . q + m5^4*k . k*q . q - 
+        2*m3^2*m4^2*k . r*q . q + 2*m4^4*k . r*q . q + 
+        2*m3^2*m5^2*k . r*q . q - 2*m4^2*m5^2*k . r*q . q + 
+        2*m4^2*t*k . k*k . r*q . q - 2*m5^2*t*k . k*k . r*q . q - 
+        2*m4^2*t*k . q*k . r*q . q + 2*m5^2*t*k . q*k . r*q . q - 
+        2*m3^2*t*(k . r)^2*q . q + 4*m4^2*t*(k . r)^2*q . q - 
+        4*t^2*k . q*(k . r)^2*q . q - t^2*(k . r)^2*(q . q)^2 + 
+        2*m3^2*m4^2*k . k*q . r - 2*m3^2*m5^2*k . k*q . r - 
+        2*m3^4*k . r*q . r + 2*m3^2*m4^2*k . r*q . r + 2*m3^2*t*k . k*k . r*
+         q . r - 4*m3^2*t*k . q*k . r*q . r - 4*m4^2*t*k . q*k . r*q . r + 
+        4*t^2*k . k*k . q*k . r*q . r + 2*m4^2*t*k . k*q . q*q . r - 
+        2*m5^2*t*k . k*q . q*q . r - 2*m3^2*t*k . r*q . q*q . r + 
+        2*m4^2*t*k . r*q . q*q . r + 2*t^2*k . k*k . r*q . q*q . r - 
+        m3^4*(q . r)^2 + 2*m3^2*m4^2*(q . r)^2 - m4^4*(q . r)^2 + 
+        2*m3^2*t*k . k*(q . r)^2 + 2*m4^2*t*k . k*(q . r)^2 - 
+        t^2*(k . k)^2*(q . r)^2 + m3^4*k . k*r . r + 
+        2*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r - 2*m3^2*t*k . q*k . r*
+         r . r + m3^4*q . q*r . r - 2*m3^2*m4^2*q . q*r . r + 
+        m4^4*q . q*r . r - 2*m5^2*t*k . k*q . q*r . r + 
+        t^2*(k . k)^2*q . q*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*
+         r . r - 2*m3^2*t*k . r*q . q*r . r + 2*m4^2*t*k . r*q . q*r . r + 
+        2*t^2*k . k*k . r*q . q*r . r - 2*t^2*k . q*k . r*q . q*r . r + 
+        t^2*k . k*(q . q)^2*r . r + 2*m3^2*t*k . k*q . r*r . r + 
+        2*t^2*k . k*q . q*q . r*r . r + t^2*k . k*q . q*(r . r)^2 + 
+        2*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+        (k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r))) + 
+      (2*m3^2*m4^2*k . p*k . r - 2*m3^2*m5^2*k . p*k . r - 
+         8*m3^2*m4^2*k . q*k . r + 8*m3^2*m5^2*k . q*k . r - 
+         4*m3^4*(k . r)^2 + 4*m3^2*t*k . p*(k . r)^2 - 16*m3^2*t*k . q*
+          (k . r)^2 - 2*m4^4*k . k*p . q + 4*m4^2*m5^2*k . k*p . q - 
+         2*m5^4*k . k*p . q + 4*m3^2*m4^2*k . r*p . q - 4*m4^4*k . r*p . q - 
+         4*m3^2*m5^2*k . r*p . q + 4*m4^2*m5^2*k . r*p . q - 
+         4*m4^2*t*k . k*k . r*p . q + 4*m5^2*t*k . k*k . r*p . q + 
+         4*m3^2*t*(k . r)^2*p . q - 8*m4^2*t*(k . r)^2*p . q + 
+         8*t^2*k . q*(k . r)^2*p . q - 2*m3^2*m4^2*k . k*p . r + 
+         2*m3^2*m5^2*k . k*p . r + 2*m3^4*k . r*p . r - 
+         2*m3^2*m4^2*k . r*p . r - 2*m3^2*t*k . k*k . r*p . r + 
+         4*m3^2*t*k . q*k . r*p . r + 4*m4^2*t*k . q*k . r*p . r - 
+         4*t^2*k . k*k . q*k . r*p . r + 4*m4^4*k . k*q . q - 
+         8*m4^2*m5^2*k . k*q . q + 4*m5^4*k . k*q . q - 
+         8*m3^2*m4^2*k . r*q . q + 8*m4^4*k . r*q . q + 
+         8*m3^2*m5^2*k . r*q . q - 8*m4^2*m5^2*k . r*q . q + 
+         8*m4^2*t*k . k*k . r*q . q - 8*m5^2*t*k . k*k . r*q . q + 
+         2*m4^2*t*k . p*k . r*q . q - 2*m5^2*t*k . p*k . r*q . q - 
+         8*m4^2*t*k . q*k . r*q . q + 8*m5^2*t*k . q*k . r*q . q - 
+         8*m3^2*t*(k . r)^2*q . q + 16*m4^2*t*(k . r)^2*q . q + 
+         4*t^2*k . p*(k . r)^2*q . q - 16*t^2*k . q*(k . r)^2*q . q + 
+         4*t^2*(k . r)^2*p . q*q . q - 2*m4^2*t*k . k*p . r*q . q + 
+         2*m5^2*t*k . k*p . r*q . q + 2*m3^2*t*k . r*p . r*q . q - 
+         2*m4^2*t*k . r*p . r*q . q - 2*t^2*k . k*k . r*p . r*q . q - 
+         4*t^2*(k . r)^2*(q . q)^2 + 8*m3^2*m4^2*k . k*q . r - 
+         8*m3^2*m5^2*k . k*q . r - 8*m3^4*k . r*q . r + 
+         8*m3^2*m4^2*k . r*q . r + 8*m3^2*t*k . k*k . r*q . r + 
+         4*m3^2*t*k . p*k . r*q . r + 4*m4^2*t*k . p*k . r*q . r - 
+         4*t^2*k . k*k . p*k . r*q . r - 16*m3^2*t*k . q*k . r*q . r - 
+         16*m4^2*t*k . q*k . r*q . r + 16*t^2*k . k*k . q*k . r*q . r - 
+         4*m4^2*t*k . k*p . q*q . r + 4*m5^2*t*k . k*p . q*q . r + 
+         4*m3^2*t*k . r*p . q*q . r - 4*m4^2*t*k . r*p . q*q . r - 
+         4*t^2*k . k*k . r*p . q*q . r + 2*m3^4*p . r*q . r - 
+         4*m3^2*m4^2*p . r*q . r + 2*m4^4*p . r*q . r - 4*m3^2*t*k . k*p . r*
+          q . r - 4*m4^2*t*k . k*p . r*q . r + 2*t^2*(k . k)^2*p . r*q . r + 
+         8*m4^2*t*k . k*q . q*q . r - 8*m5^2*t*k . k*q . q*q . r - 
+         8*m3^2*t*k . r*q . q*q . r + 8*m4^2*t*k . r*q . q*q . r + 
+         8*t^2*k . k*k . r*q . q*q . r - 4*m3^4*(q . r)^2 + 
+         8*m3^2*m4^2*(q . r)^2 - 4*m4^4*(q . r)^2 + 8*m3^2*t*k . k*
+          (q . r)^2 + 8*m4^2*t*k . k*(q . r)^2 - 4*t^2*(k . k)^2*(q . r)^2 + 
+         4*m3^4*k . k*r . r + 2*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+         8*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 2*m3^2*t*k . p*k . r*
+          r . r - 8*m3^2*t*k . q*k . r*r . r - 2*m3^4*p . q*r . r + 
+         4*m3^2*m4^2*p . q*r . r - 2*m4^4*p . q*r . r + 4*m5^2*t*k . k*p . q*
+          r . r - 2*t^2*(k . k)^2*p . q*r . r - 4*t*(m3^2 - m4^2 + t*k . k)*
+          k . q*p . q*r . r + 4*m3^2*t*k . r*p . q*r . r - 
+         4*m4^2*t*k . r*p . q*r . r - 4*t^2*k . k*k . r*p . q*r . r - 
+         2*m3^2*t*k . k*p . r*r . r + 4*m3^4*q . q*r . r - 
+         8*m3^2*m4^2*q . q*r . r + 4*m4^4*q . q*r . r - 8*m5^2*t*k . k*q . q*
+          r . r + 4*t^2*(k . k)^2*q . q*r . r + 2*t*(-m3^2 + m4^2 - t*k . k)*
+          k . p*q . q*r . r + 8*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+         8*m3^2*t*k . r*q . q*r . r + 8*m4^2*t*k . r*q . q*r . r + 
+         8*t^2*k . k*k . r*q . q*r . r + 2*t^2*k . p*k . r*q . q*r . r - 
+         8*t^2*k . q*k . r*q . q*r . r - 4*t^2*k . k*p . q*q . q*r . r - 
+         2*t^2*k . k*p . r*q . q*r . r + 4*t^2*k . k*(q . q)^2*r . r + 
+         8*m3^2*t*k . k*q . r*r . r - 4*t^2*k . k*p . q*q . r*r . r + 
+         8*t^2*k . k*q . q*q . r*r . r - 2*t^2*k . k*p . q*(r . r)^2 + 
+         4*t^2*k . k*q . q*(r . r)^2 + 4*t*k . q*k . r*p . q*
+          (m4^2 - m5^2 + t*r . r) - 2*(m3^2 - m4^2 + t*k . k)*k . q*p . r*
+          (m4^2 - m5^2 + t*r . r) + 2*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*
+          (m4^2 - m5^2 + t*r . r) + 8*(m3^2 - m4^2 + t*k . k)*k . q*q . r*
+          (m4^2 - m5^2 + t*r . r) + 2*k . p*k . q*((m4^2 - m5^2)^2 + 
+           4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*r . r + 
+           t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+         4*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)))^2*(2*m3^2*m4^2*k . p*k . r - 
+        2*m3^2*m5^2*k . p*k . r - 2*m3^2*m4^2*k . q*k . r + 
+        2*m3^2*m5^2*k . q*k . r - m3^4*(k . r)^2 + 4*m3^2*t*k . p*(k . r)^2 - 
+        4*m3^2*t*k . q*(k . r)^2 + m4^4*k . k*p . p - 2*m4^2*m5^2*k . k*
+         p . p + m5^4*k . k*p . p - 2*m3^2*m4^2*k . r*p . p + 
+        2*m4^4*k . r*p . p + 2*m3^2*m5^2*k . r*p . p - 
+        2*m4^2*m5^2*k . r*p . p + 2*m4^2*t*k . k*k . r*p . p - 
+        2*m5^2*t*k . k*k . r*p . p - 2*m3^2*t*(k . r)^2*p . p + 
+        4*m4^2*t*(k . r)^2*p . p + 4*t^2*k . p*(k . r)^2*p . p - 
+        4*t^2*k . q*(k . r)^2*p . p - t^2*(k . r)^2*(p . p)^2 - 
+        2*m4^4*k . k*p . q + 4*m4^2*m5^2*k . k*p . q - 2*m5^4*k . k*p . q + 
+        4*m3^2*m4^2*k . r*p . q - 4*m4^4*k . r*p . q - 
+        4*m3^2*m5^2*k . r*p . q + 4*m4^2*m5^2*k . r*p . q - 
+        4*m4^2*t*k . k*k . r*p . q + 4*m5^2*t*k . k*k . r*p . q + 
+        4*m3^2*t*(k . r)^2*p . q - 8*m4^2*t*(k . r)^2*p . q - 
+        8*t^2*k . p*(k . r)^2*p . q + 8*t^2*k . q*(k . r)^2*p . q + 
+        4*t^2*(k . r)^2*p . p*p . q - 4*t^2*(k . r)^2*(p . q)^2 - 
+        2*m3^2*m4^2*k . k*p . r + 2*m3^2*m5^2*k . k*p . r + 
+        2*m3^4*k . r*p . r - 2*m3^2*m4^2*k . r*p . r - 2*m3^2*t*k . k*k . r*
+         p . r - 4*m3^2*t*k . p*k . r*p . r - 4*m4^2*t*k . p*k . r*p . r + 
+        4*t^2*k . k*k . p*k . r*p . r + 4*m3^2*t*k . q*k . r*p . r + 
+        4*m4^2*t*k . q*k . r*p . r - 4*t^2*k . k*k . q*k . r*p . r - 
+        2*m4^2*t*k . k*p . p*p . r + 2*m5^2*t*k . k*p . p*p . r + 
+        2*m3^2*t*k . r*p . p*p . r - 2*m4^2*t*k . r*p . p*p . r - 
+        2*t^2*k . k*k . r*p . p*p . r + 4*m4^2*t*k . k*p . q*p . r - 
+        4*m5^2*t*k . k*p . q*p . r - 4*m3^2*t*k . r*p . q*p . r + 
+        4*m4^2*t*k . r*p . q*p . r + 4*t^2*k . k*k . r*p . q*p . r - 
+        m3^4*(p . r)^2 + 2*m3^2*m4^2*(p . r)^2 - m4^4*(p . r)^2 + 
+        2*m3^2*t*k . k*(p . r)^2 + 2*m4^2*t*k . k*(p . r)^2 - 
+        t^2*(k . k)^2*(p . r)^2 + m4^4*k . k*q . q - 2*m4^2*m5^2*k . k*
+         q . q + m5^4*k . k*q . q - 2*m3^2*m4^2*k . r*q . q + 
+        2*m4^4*k . r*q . q + 2*m3^2*m5^2*k . r*q . q - 
+        2*m4^2*m5^2*k . r*q . q + 2*m4^2*t*k . k*k . r*q . q - 
+        2*m5^2*t*k . k*k . r*q . q + 2*m4^2*t*k . p*k . r*q . q - 
+        2*m5^2*t*k . p*k . r*q . q - 2*m4^2*t*k . q*k . r*q . q + 
+        2*m5^2*t*k . q*k . r*q . q - 2*m3^2*t*(k . r)^2*q . q + 
+        4*m4^2*t*(k . r)^2*q . q + 4*t^2*k . p*(k . r)^2*q . q - 
+        4*t^2*k . q*(k . r)^2*q . q - 2*t^2*(k . r)^2*p . p*q . q + 
+        4*t^2*(k . r)^2*p . q*q . q - 2*m4^2*t*k . k*p . r*q . q + 
+        2*m5^2*t*k . k*p . r*q . q + 2*m3^2*t*k . r*p . r*q . q - 
+        2*m4^2*t*k . r*p . r*q . q - 2*t^2*k . k*k . r*p . r*q . q - 
+        t^2*(k . r)^2*(q . q)^2 + 2*m3^2*m4^2*k . k*q . r - 
+        2*m3^2*m5^2*k . k*q . r - 2*m3^4*k . r*q . r + 
+        2*m3^2*m4^2*k . r*q . r + 2*m3^2*t*k . k*k . r*q . r + 
+        4*m3^2*t*k . p*k . r*q . r + 4*m4^2*t*k . p*k . r*q . r - 
+        4*t^2*k . k*k . p*k . r*q . r - 4*m3^2*t*k . q*k . r*q . r - 
+        4*m4^2*t*k . q*k . r*q . r + 4*t^2*k . k*k . q*k . r*q . r + 
+        2*m4^2*t*k . k*p . p*q . r - 2*m5^2*t*k . k*p . p*q . r - 
+        2*m3^2*t*k . r*p . p*q . r + 2*m4^2*t*k . r*p . p*q . r + 
+        2*t^2*k . k*k . r*p . p*q . r - 4*m4^2*t*k . k*p . q*q . r + 
+        4*m5^2*t*k . k*p . q*q . r + 4*m3^2*t*k . r*p . q*q . r - 
+        4*m4^2*t*k . r*p . q*q . r - 4*t^2*k . k*k . r*p . q*q . r + 
+        2*m3^4*p . r*q . r - 4*m3^2*m4^2*p . r*q . r + 2*m4^4*p . r*q . r - 
+        4*m3^2*t*k . k*p . r*q . r - 4*m4^2*t*k . k*p . r*q . r + 
+        2*t^2*(k . k)^2*p . r*q . r + 2*m4^2*t*k . k*q . q*q . r - 
+        2*m5^2*t*k . k*q . q*q . r - 2*m3^2*t*k . r*q . q*q . r + 
+        2*m4^2*t*k . r*q . q*q . r + 2*t^2*k . k*k . r*q . q*q . r - 
+        m3^4*(q . r)^2 + 2*m3^2*m4^2*(q . r)^2 - m4^4*(q . r)^2 + 
+        2*m3^2*t*k . k*(q . r)^2 + 2*m4^2*t*k . k*(q . r)^2 - 
+        t^2*(k . k)^2*(q . r)^2 + m3^4*k . k*r . r + 
+        2*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+        2*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 2*m3^2*t*k . p*k . r*
+         r . r - 2*m3^2*t*k . q*k . r*r . r + m3^4*p . p*r . r - 
+        2*m3^2*m4^2*p . p*r . r + m4^4*p . p*r . r - 2*m5^2*t*k . k*p . p*
+         r . r + t^2*(k . k)^2*p . p*r . r + 2*t*(-m3^2 + m4^2 - t*k . k)*
+         k . p*p . p*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*k . q*p . p*r . r - 
+        2*m3^2*t*k . r*p . p*r . r + 2*m4^2*t*k . r*p . p*r . r + 
+        2*t^2*k . k*k . r*p . p*r . r + t^2*k . k*(p . p)^2*r . r - 
+        2*m3^4*p . q*r . r + 4*m3^2*m4^2*p . q*r . r - 2*m4^4*p . q*r . r + 
+        4*m5^2*t*k . k*p . q*r . r - 2*t^2*(k . k)^2*p . q*r . r - 
+        4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r - 
+        4*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r + 
+        4*m3^2*t*k . r*p . q*r . r - 4*m4^2*t*k . r*p . q*r . r - 
+        4*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*p . p*p . q*r . r + 
+        4*t^2*k . k*(p . q)^2*r . r - 2*m3^2*t*k . k*p . r*r . r - 
+        2*t^2*k . k*p . p*p . r*r . r + 4*t^2*k . k*p . q*p . r*r . r + 
+        m3^4*q . q*r . r - 2*m3^2*m4^2*q . q*r . r + m4^4*q . q*r . r - 
+        2*m5^2*t*k . k*q . q*r . r + t^2*(k . k)^2*q . q*r . r + 
+        2*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r + 
+        2*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+        2*m3^2*t*k . r*q . q*r . r + 2*m4^2*t*k . r*q . q*r . r + 
+        2*t^2*k . k*k . r*q . q*r . r + 2*t^2*k . p*k . r*q . q*r . r - 
+        2*t^2*k . q*k . r*q . q*r . r + 2*t^2*k . k*p . p*q . q*r . r - 
+        4*t^2*k . k*p . q*q . q*r . r - 2*t^2*k . k*p . r*q . q*r . r + 
+        t^2*k . k*(q . q)^2*r . r + 2*m3^2*t*k . k*q . r*r . r + 
+        2*t^2*k . k*p . p*q . r*r . r - 4*t^2*k . k*p . q*q . r*r . r + 
+        2*t^2*k . k*q . q*q . r*r . r + t^2*k . k*p . p*(r . r)^2 - 
+        2*t^2*k . k*p . q*(r . r)^2 + t^2*k . k*q . q*(r . r)^2 + 
+        2*t*k . p*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+        2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+        4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+        4*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+        2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) - 
+        2*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) + 
+        2*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) + 
+        2*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+        (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 2*k . p*k . q*
+         ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+           r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+        (k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r))) - 
+      4*(6*m3^2*m4^2*k . p*k . r - 6*m3^2*m5^2*k . p*k . r - 
+        12*m3^2*m4^2*k . q*k . r + 12*m3^2*m5^2*k . q*k . r - 
+        6*m3^4*(k . r)^2 + 12*m3^2*t*k . p*(k . r)^2 - 
+        24*m3^2*t*k . q*(k . r)^2 + m4^4*k . k*p . p - 
+        2*m4^2*m5^2*k . k*p . p + m5^4*k . k*p . p - 2*m3^2*m4^2*k . r*
+         p . p + 2*m4^4*k . r*p . p + 2*m3^2*m5^2*k . r*p . p - 
+        2*m4^2*m5^2*k . r*p . p + 2*m4^2*t*k . k*k . r*p . p - 
+        2*m5^2*t*k . k*k . r*p . p - 2*m3^2*t*(k . r)^2*p . p + 
+        4*m4^2*t*(k . r)^2*p . p - 4*t^2*k . q*(k . r)^2*p . p - 
+        6*m4^4*k . k*p . q + 12*m4^2*m5^2*k . k*p . q - 6*m5^4*k . k*p . q + 
+        12*m3^2*m4^2*k . r*p . q - 12*m4^4*k . r*p . q - 
+        12*m3^2*m5^2*k . r*p . q + 12*m4^2*m5^2*k . r*p . q - 
+        12*m4^2*t*k . k*k . r*p . q + 12*m5^2*t*k . k*k . r*p . q + 
+        12*m3^2*t*(k . r)^2*p . q - 24*m4^2*t*(k . r)^2*p . q - 
+        8*t^2*k . p*(k . r)^2*p . q + 24*t^2*k . q*(k . r)^2*p . q - 
+        4*t^2*(k . r)^2*(p . q)^2 - 6*m3^2*m4^2*k . k*p . r + 
+        6*m3^2*m5^2*k . k*p . r + 6*m3^4*k . r*p . r - 
+        6*m3^2*m4^2*k . r*p . r - 6*m3^2*t*k . k*k . r*p . r - 
+        4*m3^2*t*k . p*k . r*p . r - 4*m4^2*t*k . p*k . r*p . r + 
+        4*t^2*k . k*k . p*k . r*p . r + 12*m3^2*t*k . q*k . r*p . r + 
+        12*m4^2*t*k . q*k . r*p . r - 12*t^2*k . k*k . q*k . r*p . r + 
+        4*m4^2*t*k . k*p . q*p . r - 4*m5^2*t*k . k*p . q*p . r - 
+        4*m3^2*t*k . r*p . q*p . r + 4*m4^2*t*k . r*p . q*p . r + 
+        4*t^2*k . k*k . r*p . q*p . r - m3^4*(p . r)^2 + 
+        2*m3^2*m4^2*(p . r)^2 - m4^4*(p . r)^2 + 2*m3^2*t*k . k*(p . r)^2 + 
+        2*m4^2*t*k . k*(p . r)^2 - t^2*(k . k)^2*(p . r)^2 + 
+        6*m4^4*k . k*q . q - 12*m4^2*m5^2*k . k*q . q + 6*m5^4*k . k*q . q - 
+        12*m3^2*m4^2*k . r*q . q + 12*m4^4*k . r*q . q + 
+        12*m3^2*m5^2*k . r*q . q - 12*m4^2*m5^2*k . r*q . q + 
+        12*m4^2*t*k . k*k . r*q . q - 12*m5^2*t*k . k*k . r*q . q + 
+        6*m4^2*t*k . p*k . r*q . q - 6*m5^2*t*k . p*k . r*q . q - 
+        12*m4^2*t*k . q*k . r*q . q + 12*m5^2*t*k . q*k . r*q . q - 
+        12*m3^2*t*(k . r)^2*q . q + 24*m4^2*t*(k . r)^2*q . q + 
+        12*t^2*k . p*(k . r)^2*q . q - 24*t^2*k . q*(k . r)^2*q . q - 
+        2*t^2*(k . r)^2*p . p*q . q + 12*t^2*(k . r)^2*p . q*q . q - 
+        6*m4^2*t*k . k*p . r*q . q + 6*m5^2*t*k . k*p . r*q . q + 
+        6*m3^2*t*k . r*p . r*q . q - 6*m4^2*t*k . r*p . r*q . q - 
+        6*t^2*k . k*k . r*p . r*q . q - 6*t^2*(k . r)^2*(q . q)^2 + 
+        12*m3^2*m4^2*k . k*q . r - 12*m3^2*m5^2*k . k*q . r - 
+        12*m3^4*k . r*q . r + 12*m3^2*m4^2*k . r*q . r + 
+        12*m3^2*t*k . k*k . r*q . r + 12*m3^2*t*k . p*k . r*q . r + 
+        12*m4^2*t*k . p*k . r*q . r - 12*t^2*k . k*k . p*k . r*q . r - 
+        24*m3^2*t*k . q*k . r*q . r - 24*m4^2*t*k . q*k . r*q . r + 
+        24*t^2*k . k*k . q*k . r*q . r + 2*m4^2*t*k . k*p . p*q . r - 
+        2*m5^2*t*k . k*p . p*q . r - 2*m3^2*t*k . r*p . p*q . r + 
+        2*m4^2*t*k . r*p . p*q . r + 2*t^2*k . k*k . r*p . p*q . r - 
+        12*m4^2*t*k . k*p . q*q . r + 12*m5^2*t*k . k*p . q*q . r + 
+        12*m3^2*t*k . r*p . q*q . r - 12*m4^2*t*k . r*p . q*q . r - 
+        12*t^2*k . k*k . r*p . q*q . r + 6*m3^4*p . r*q . r - 
+        12*m3^2*m4^2*p . r*q . r + 6*m4^4*p . r*q . r - 
+        12*m3^2*t*k . k*p . r*q . r - 12*m4^2*t*k . k*p . r*q . r + 
+        6*t^2*(k . k)^2*p . r*q . r + 12*m4^2*t*k . k*q . q*q . r - 
+        12*m5^2*t*k . k*q . q*q . r - 12*m3^2*t*k . r*q . q*q . r + 
+        12*m4^2*t*k . r*q . q*q . r + 12*t^2*k . k*k . r*q . q*q . r - 
+        6*m3^4*(q . r)^2 + 12*m3^2*m4^2*(q . r)^2 - 6*m4^4*(q . r)^2 + 
+        12*m3^2*t*k . k*(q . r)^2 + 12*m4^2*t*k . k*(q . r)^2 - 
+        6*t^2*(k . k)^2*(q . r)^2 + 6*m3^4*k . k*r . r + 
+        6*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+        12*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 6*m3^2*t*k . p*k . r*
+         r . r - 12*m3^2*t*k . q*k . r*r . r + m3^4*p . p*r . r - 
+        2*m3^2*m4^2*p . p*r . r + m4^4*p . p*r . r - 2*m5^2*t*k . k*p . p*
+         r . r + t^2*(k . k)^2*p . p*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*
+         k . q*p . p*r . r - 2*m3^2*t*k . r*p . p*r . r + 
+        2*m4^2*t*k . r*p . p*r . r + 2*t^2*k . k*k . r*p . p*r . r - 
+        6*m3^4*p . q*r . r + 12*m3^2*m4^2*p . q*r . r - 6*m4^4*p . q*r . r + 
+        12*m5^2*t*k . k*p . q*r . r - 6*t^2*(k . k)^2*p . q*r . r - 
+        4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r - 
+        12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r + 
+        12*m3^2*t*k . r*p . q*r . r - 12*m4^2*t*k . r*p . q*r . r - 
+        12*t^2*k . k*k . r*p . q*r . r + 4*t^2*k . k*(p . q)^2*r . r - 
+        6*m3^2*t*k . k*p . r*r . r + 4*t^2*k . k*p . q*p . r*r . r + 
+        6*m3^4*q . q*r . r - 12*m3^2*m4^2*q . q*r . r + 6*m4^4*q . q*r . r - 
+        12*m5^2*t*k . k*q . q*r . r + 6*t^2*(k . k)^2*q . q*r . r + 
+        6*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r + 
+        12*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+        12*m3^2*t*k . r*q . q*r . r + 12*m4^2*t*k . r*q . q*r . r + 
+        12*t^2*k . k*k . r*q . q*r . r + 6*t^2*k . p*k . r*q . q*r . r - 
+        12*t^2*k . q*k . r*q . q*r . r + 2*t^2*k . k*p . p*q . q*r . r - 
+        12*t^2*k . k*p . q*q . q*r . r - 6*t^2*k . k*p . r*q . q*r . r + 
+        6*t^2*k . k*(q . q)^2*r . r + 12*m3^2*t*k . k*q . r*r . r + 
+        2*t^2*k . k*p . p*q . r*r . r - 12*t^2*k . k*p . q*q . r*r . r + 
+        12*t^2*k . k*q . q*q . r*r . r + t^2*k . k*p . p*(r . r)^2 - 
+        6*t^2*k . k*p . q*(r . r)^2 + 6*t^2*k . k*q . q*(r . r)^2 - 
+        2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+        4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+        12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+        2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) - 
+        6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) + 
+        6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) + 
+        12*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+        (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 6*k . p*k . q*
+         ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+           r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+        6*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r)))*(-2*m3^2*m4^2*k . q*k . r + 
+        2*m3^2*m5^2*k . q*k . r - m3^4*(k . r)^2 - 4*m3^2*t*k . q*(k . r)^2 + 
+        m4^4*k . k*q . q - 2*m4^2*m5^2*k . k*q . q + m5^4*k . k*q . q - 
+        2*m3^2*m4^2*k . r*q . q + 2*m4^4*k . r*q . q + 
+        2*m3^2*m5^2*k . r*q . q - 2*m4^2*m5^2*k . r*q . q + 
+        2*m4^2*t*k . k*k . r*q . q - 2*m5^2*t*k . k*k . r*q . q - 
+        2*m4^2*t*k . q*k . r*q . q + 2*m5^2*t*k . q*k . r*q . q - 
+        2*m3^2*t*(k . r)^2*q . q + 4*m4^2*t*(k . r)^2*q . q - 
+        4*t^2*k . q*(k . r)^2*q . q - t^2*(k . r)^2*(q . q)^2 + 
+        2*m3^2*m4^2*k . k*q . r - 2*m3^2*m5^2*k . k*q . r - 
+        2*m3^4*k . r*q . r + 2*m3^2*m4^2*k . r*q . r + 2*m3^2*t*k . k*k . r*
+         q . r - 4*m3^2*t*k . q*k . r*q . r - 4*m4^2*t*k . q*k . r*q . r + 
+        4*t^2*k . k*k . q*k . r*q . r + 2*m4^2*t*k . k*q . q*q . r - 
+        2*m5^2*t*k . k*q . q*q . r - 2*m3^2*t*k . r*q . q*q . r + 
+        2*m4^2*t*k . r*q . q*q . r + 2*t^2*k . k*k . r*q . q*q . r - 
+        m3^4*(q . r)^2 + 2*m3^2*m4^2*(q . r)^2 - m4^4*(q . r)^2 + 
+        2*m3^2*t*k . k*(q . r)^2 + 2*m4^2*t*k . k*(q . r)^2 - 
+        t^2*(k . k)^2*(q . r)^2 + m3^4*k . k*r . r + 
+        2*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r - 2*m3^2*t*k . q*k . r*
+         r . r + m3^4*q . q*r . r - 2*m3^2*m4^2*q . q*r . r + 
+        m4^4*q . q*r . r - 2*m5^2*t*k . k*q . q*r . r + 
+        t^2*(k . k)^2*q . q*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*
+         r . r - 2*m3^2*t*k . r*q . q*r . r + 2*m4^2*t*k . r*q . q*r . r + 
+        2*t^2*k . k*k . r*q . q*r . r - 2*t^2*k . q*k . r*q . q*r . r + 
+        t^2*k . k*(q . q)^2*r . r + 2*m3^2*t*k . k*q . r*r . r + 
+        2*t^2*k . k*q . q*q . r*r . r + t^2*k . k*q . q*(r . r)^2 + 
+        2*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+        (k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r)))*(2*m3^2*m4^2*k . p*k . r - 
+        2*m3^2*m5^2*k . p*k . r - 2*m3^2*m4^2*k . q*k . r + 
+        2*m3^2*m5^2*k . q*k . r - m3^4*(k . r)^2 + 4*m3^2*t*k . p*(k . r)^2 - 
+        4*m3^2*t*k . q*(k . r)^2 + m4^4*k . k*p . p - 2*m4^2*m5^2*k . k*
+         p . p + m5^4*k . k*p . p - 2*m3^2*m4^2*k . r*p . p + 
+        2*m4^4*k . r*p . p + 2*m3^2*m5^2*k . r*p . p - 
+        2*m4^2*m5^2*k . r*p . p + 2*m4^2*t*k . k*k . r*p . p - 
+        2*m5^2*t*k . k*k . r*p . p - 2*m3^2*t*(k . r)^2*p . p + 
+        4*m4^2*t*(k . r)^2*p . p + 4*t^2*k . p*(k . r)^2*p . p - 
+        4*t^2*k . q*(k . r)^2*p . p - t^2*(k . r)^2*(p . p)^2 - 
+        2*m4^4*k . k*p . q + 4*m4^2*m5^2*k . k*p . q - 2*m5^4*k . k*p . q + 
+        4*m3^2*m4^2*k . r*p . q - 4*m4^4*k . r*p . q - 
+        4*m3^2*m5^2*k . r*p . q + 4*m4^2*m5^2*k . r*p . q - 
+        4*m4^2*t*k . k*k . r*p . q + 4*m5^2*t*k . k*k . r*p . q + 
+        4*m3^2*t*(k . r)^2*p . q - 8*m4^2*t*(k . r)^2*p . q - 
+        8*t^2*k . p*(k . r)^2*p . q + 8*t^2*k . q*(k . r)^2*p . q + 
+        4*t^2*(k . r)^2*p . p*p . q - 4*t^2*(k . r)^2*(p . q)^2 - 
+        2*m3^2*m4^2*k . k*p . r + 2*m3^2*m5^2*k . k*p . r + 
+        2*m3^4*k . r*p . r - 2*m3^2*m4^2*k . r*p . r - 2*m3^2*t*k . k*k . r*
+         p . r - 4*m3^2*t*k . p*k . r*p . r - 4*m4^2*t*k . p*k . r*p . r + 
+        4*t^2*k . k*k . p*k . r*p . r + 4*m3^2*t*k . q*k . r*p . r + 
+        4*m4^2*t*k . q*k . r*p . r - 4*t^2*k . k*k . q*k . r*p . r - 
+        2*m4^2*t*k . k*p . p*p . r + 2*m5^2*t*k . k*p . p*p . r + 
+        2*m3^2*t*k . r*p . p*p . r - 2*m4^2*t*k . r*p . p*p . r - 
+        2*t^2*k . k*k . r*p . p*p . r + 4*m4^2*t*k . k*p . q*p . r - 
+        4*m5^2*t*k . k*p . q*p . r - 4*m3^2*t*k . r*p . q*p . r + 
+        4*m4^2*t*k . r*p . q*p . r + 4*t^2*k . k*k . r*p . q*p . r - 
+        m3^4*(p . r)^2 + 2*m3^2*m4^2*(p . r)^2 - m4^4*(p . r)^2 + 
+        2*m3^2*t*k . k*(p . r)^2 + 2*m4^2*t*k . k*(p . r)^2 - 
+        t^2*(k . k)^2*(p . r)^2 + m4^4*k . k*q . q - 2*m4^2*m5^2*k . k*
+         q . q + m5^4*k . k*q . q - 2*m3^2*m4^2*k . r*q . q + 
+        2*m4^4*k . r*q . q + 2*m3^2*m5^2*k . r*q . q - 
+        2*m4^2*m5^2*k . r*q . q + 2*m4^2*t*k . k*k . r*q . q - 
+        2*m5^2*t*k . k*k . r*q . q + 2*m4^2*t*k . p*k . r*q . q - 
+        2*m5^2*t*k . p*k . r*q . q - 2*m4^2*t*k . q*k . r*q . q + 
+        2*m5^2*t*k . q*k . r*q . q - 2*m3^2*t*(k . r)^2*q . q + 
+        4*m4^2*t*(k . r)^2*q . q + 4*t^2*k . p*(k . r)^2*q . q - 
+        4*t^2*k . q*(k . r)^2*q . q - 2*t^2*(k . r)^2*p . p*q . q + 
+        4*t^2*(k . r)^2*p . q*q . q - 2*m4^2*t*k . k*p . r*q . q + 
+        2*m5^2*t*k . k*p . r*q . q + 2*m3^2*t*k . r*p . r*q . q - 
+        2*m4^2*t*k . r*p . r*q . q - 2*t^2*k . k*k . r*p . r*q . q - 
+        t^2*(k . r)^2*(q . q)^2 + 2*m3^2*m4^2*k . k*q . r - 
+        2*m3^2*m5^2*k . k*q . r - 2*m3^4*k . r*q . r + 
+        2*m3^2*m4^2*k . r*q . r + 2*m3^2*t*k . k*k . r*q . r + 
+        4*m3^2*t*k . p*k . r*q . r + 4*m4^2*t*k . p*k . r*q . r - 
+        4*t^2*k . k*k . p*k . r*q . r - 4*m3^2*t*k . q*k . r*q . r - 
+        4*m4^2*t*k . q*k . r*q . r + 4*t^2*k . k*k . q*k . r*q . r + 
+        2*m4^2*t*k . k*p . p*q . r - 2*m5^2*t*k . k*p . p*q . r - 
+        2*m3^2*t*k . r*p . p*q . r + 2*m4^2*t*k . r*p . p*q . r + 
+        2*t^2*k . k*k . r*p . p*q . r - 4*m4^2*t*k . k*p . q*q . r + 
+        4*m5^2*t*k . k*p . q*q . r + 4*m3^2*t*k . r*p . q*q . r - 
+        4*m4^2*t*k . r*p . q*q . r - 4*t^2*k . k*k . r*p . q*q . r + 
+        2*m3^4*p . r*q . r - 4*m3^2*m4^2*p . r*q . r + 2*m4^4*p . r*q . r - 
+        4*m3^2*t*k . k*p . r*q . r - 4*m4^2*t*k . k*p . r*q . r + 
+        2*t^2*(k . k)^2*p . r*q . r + 2*m4^2*t*k . k*q . q*q . r - 
+        2*m5^2*t*k . k*q . q*q . r - 2*m3^2*t*k . r*q . q*q . r + 
+        2*m4^2*t*k . r*q . q*q . r + 2*t^2*k . k*k . r*q . q*q . r - 
+        m3^4*(q . r)^2 + 2*m3^2*m4^2*(q . r)^2 - m4^4*(q . r)^2 + 
+        2*m3^2*t*k . k*(q . r)^2 + 2*m4^2*t*k . k*(q . r)^2 - 
+        t^2*(k . k)^2*(q . r)^2 + m3^4*k . k*r . r + 
+        2*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+        2*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 2*m3^2*t*k . p*k . r*
+         r . r - 2*m3^2*t*k . q*k . r*r . r + m3^4*p . p*r . r - 
+        2*m3^2*m4^2*p . p*r . r + m4^4*p . p*r . r - 2*m5^2*t*k . k*p . p*
+         r . r + t^2*(k . k)^2*p . p*r . r + 2*t*(-m3^2 + m4^2 - t*k . k)*
+         k . p*p . p*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*k . q*p . p*r . r - 
+        2*m3^2*t*k . r*p . p*r . r + 2*m4^2*t*k . r*p . p*r . r + 
+        2*t^2*k . k*k . r*p . p*r . r + t^2*k . k*(p . p)^2*r . r - 
+        2*m3^4*p . q*r . r + 4*m3^2*m4^2*p . q*r . r - 2*m4^4*p . q*r . r + 
+        4*m5^2*t*k . k*p . q*r . r - 2*t^2*(k . k)^2*p . q*r . r - 
+        4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r - 
+        4*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r + 
+        4*m3^2*t*k . r*p . q*r . r - 4*m4^2*t*k . r*p . q*r . r - 
+        4*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*p . p*p . q*r . r + 
+        4*t^2*k . k*(p . q)^2*r . r - 2*m3^2*t*k . k*p . r*r . r - 
+        2*t^2*k . k*p . p*p . r*r . r + 4*t^2*k . k*p . q*p . r*r . r + 
+        m3^4*q . q*r . r - 2*m3^2*m4^2*q . q*r . r + m4^4*q . q*r . r - 
+        2*m5^2*t*k . k*q . q*r . r + t^2*(k . k)^2*q . q*r . r + 
+        2*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r + 
+        2*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+        2*m3^2*t*k . r*q . q*r . r + 2*m4^2*t*k . r*q . q*r . r + 
+        2*t^2*k . k*k . r*q . q*r . r + 2*t^2*k . p*k . r*q . q*r . r - 
+        2*t^2*k . q*k . r*q . q*r . r + 2*t^2*k . k*p . p*q . q*r . r - 
+        4*t^2*k . k*p . q*q . q*r . r - 2*t^2*k . k*p . r*q . q*r . r + 
+        t^2*k . k*(q . q)^2*r . r + 2*m3^2*t*k . k*q . r*r . r + 
+        2*t^2*k . k*p . p*q . r*r . r - 4*t^2*k . k*p . q*q . r*r . r + 
+        2*t^2*k . k*q . q*q . r*r . r + t^2*k . k*p . p*(r . r)^2 - 
+        2*t^2*k . k*p . q*(r . r)^2 + t^2*k . k*q . q*(r . r)^2 + 
+        2*t*k . p*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+        2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+        4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+        4*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+        2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) - 
+        2*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) + 
+        2*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) + 
+        2*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+        (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 2*k . p*k . q*
+         ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+           r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+        (k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+          2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+          4*t*k . r*(m4^2 - m5^2 + t*r . r))) + 
+      ((6*m3^2*m4^2*k . p*k . r - 6*m3^2*m5^2*k . p*k . r - 
+         12*m3^2*m4^2*k . q*k . r + 12*m3^2*m5^2*k . q*k . r - 
+         6*m3^4*(k . r)^2 + 12*m3^2*t*k . p*(k . r)^2 - 
+         24*m3^2*t*k . q*(k . r)^2 + m4^4*k . k*p . p - 
+         2*m4^2*m5^2*k . k*p . p + m5^4*k . k*p . p - 2*m3^2*m4^2*k . r*
+          p . p + 2*m4^4*k . r*p . p + 2*m3^2*m5^2*k . r*p . p - 
+         2*m4^2*m5^2*k . r*p . p + 2*m4^2*t*k . k*k . r*p . p - 
+         2*m5^2*t*k . k*k . r*p . p - 2*m3^2*t*(k . r)^2*p . p + 
+         4*m4^2*t*(k . r)^2*p . p - 4*t^2*k . q*(k . r)^2*p . p - 
+         6*m4^4*k . k*p . q + 12*m4^2*m5^2*k . k*p . q - 6*m5^4*k . k*p . q + 
+         12*m3^2*m4^2*k . r*p . q - 12*m4^4*k . r*p . q - 
+         12*m3^2*m5^2*k . r*p . q + 12*m4^2*m5^2*k . r*p . q - 
+         12*m4^2*t*k . k*k . r*p . q + 12*m5^2*t*k . k*k . r*p . q + 
+         12*m3^2*t*(k . r)^2*p . q - 24*m4^2*t*(k . r)^2*p . q - 
+         8*t^2*k . p*(k . r)^2*p . q + 24*t^2*k . q*(k . r)^2*p . q - 
+         4*t^2*(k . r)^2*(p . q)^2 - 6*m3^2*m4^2*k . k*p . r + 
+         6*m3^2*m5^2*k . k*p . r + 6*m3^4*k . r*p . r - 
+         6*m3^2*m4^2*k . r*p . r - 6*m3^2*t*k . k*k . r*p . r - 
+         4*m3^2*t*k . p*k . r*p . r - 4*m4^2*t*k . p*k . r*p . r + 
+         4*t^2*k . k*k . p*k . r*p . r + 12*m3^2*t*k . q*k . r*p . r + 
+         12*m4^2*t*k . q*k . r*p . r - 12*t^2*k . k*k . q*k . r*p . r + 
+         4*m4^2*t*k . k*p . q*p . r - 4*m5^2*t*k . k*p . q*p . r - 
+         4*m3^2*t*k . r*p . q*p . r + 4*m4^2*t*k . r*p . q*p . r + 
+         4*t^2*k . k*k . r*p . q*p . r - m3^4*(p . r)^2 + 
+         2*m3^2*m4^2*(p . r)^2 - m4^4*(p . r)^2 + 2*m3^2*t*k . k*(p . r)^2 + 
+         2*m4^2*t*k . k*(p . r)^2 - t^2*(k . k)^2*(p . r)^2 + 
+         6*m4^4*k . k*q . q - 12*m4^2*m5^2*k . k*q . q + 6*m5^4*k . k*q . q - 
+         12*m3^2*m4^2*k . r*q . q + 12*m4^4*k . r*q . q + 
+         12*m3^2*m5^2*k . r*q . q - 12*m4^2*m5^2*k . r*q . q + 
+         12*m4^2*t*k . k*k . r*q . q - 12*m5^2*t*k . k*k . r*q . q + 
+         6*m4^2*t*k . p*k . r*q . q - 6*m5^2*t*k . p*k . r*q . q - 
+         12*m4^2*t*k . q*k . r*q . q + 12*m5^2*t*k . q*k . r*q . q - 
+         12*m3^2*t*(k . r)^2*q . q + 24*m4^2*t*(k . r)^2*q . q + 
+         12*t^2*k . p*(k . r)^2*q . q - 24*t^2*k . q*(k . r)^2*q . q - 
+         2*t^2*(k . r)^2*p . p*q . q + 12*t^2*(k . r)^2*p . q*q . q - 
+         6*m4^2*t*k . k*p . r*q . q + 6*m5^2*t*k . k*p . r*q . q + 
+         6*m3^2*t*k . r*p . r*q . q - 6*m4^2*t*k . r*p . r*q . q - 
+         6*t^2*k . k*k . r*p . r*q . q - 6*t^2*(k . r)^2*(q . q)^2 + 
+         12*m3^2*m4^2*k . k*q . r - 12*m3^2*m5^2*k . k*q . r - 
+         12*m3^4*k . r*q . r + 12*m3^2*m4^2*k . r*q . r + 
+         12*m3^2*t*k . k*k . r*q . r + 12*m3^2*t*k . p*k . r*q . r + 
+         12*m4^2*t*k . p*k . r*q . r - 12*t^2*k . k*k . p*k . r*q . r - 
+         24*m3^2*t*k . q*k . r*q . r - 24*m4^2*t*k . q*k . r*q . r + 
+         24*t^2*k . k*k . q*k . r*q . r + 2*m4^2*t*k . k*p . p*q . r - 
+         2*m5^2*t*k . k*p . p*q . r - 2*m3^2*t*k . r*p . p*q . r + 
+         2*m4^2*t*k . r*p . p*q . r + 2*t^2*k . k*k . r*p . p*q . r - 
+         12*m4^2*t*k . k*p . q*q . r + 12*m5^2*t*k . k*p . q*q . r + 
+         12*m3^2*t*k . r*p . q*q . r - 12*m4^2*t*k . r*p . q*q . r - 
+         12*t^2*k . k*k . r*p . q*q . r + 6*m3^4*p . r*q . r - 
+         12*m3^2*m4^2*p . r*q . r + 6*m4^4*p . r*q . r - 
+         12*m3^2*t*k . k*p . r*q . r - 12*m4^2*t*k . k*p . r*q . r + 
+         6*t^2*(k . k)^2*p . r*q . r + 12*m4^2*t*k . k*q . q*q . r - 
+         12*m5^2*t*k . k*q . q*q . r - 12*m3^2*t*k . r*q . q*q . r + 
+         12*m4^2*t*k . r*q . q*q . r + 12*t^2*k . k*k . r*q . q*q . r - 
+         6*m3^4*(q . r)^2 + 12*m3^2*m4^2*(q . r)^2 - 6*m4^4*(q . r)^2 + 
+         12*m3^2*t*k . k*(q . r)^2 + 12*m4^2*t*k . k*(q . r)^2 - 
+         6*t^2*(k . k)^2*(q . r)^2 + 6*m3^4*k . k*r . r + 
+         6*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+         12*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 6*m3^2*t*k . p*k . r*
+          r . r - 12*m3^2*t*k . q*k . r*r . r + m3^4*p . p*r . r - 
+         2*m3^2*m4^2*p . p*r . r + m4^4*p . p*r . r - 2*m5^2*t*k . k*p . p*
+          r . r + t^2*(k . k)^2*p . p*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*
+          k . q*p . p*r . r - 2*m3^2*t*k . r*p . p*r . r + 
+         2*m4^2*t*k . r*p . p*r . r + 2*t^2*k . k*k . r*p . p*r . r - 
+         6*m3^4*p . q*r . r + 12*m3^2*m4^2*p . q*r . r - 6*m4^4*p . q*r . r + 
+         12*m5^2*t*k . k*p . q*r . r - 6*t^2*(k . k)^2*p . q*r . r - 
+         4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r - 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r + 
+         12*m3^2*t*k . r*p . q*r . r - 12*m4^2*t*k . r*p . q*r . r - 
+         12*t^2*k . k*k . r*p . q*r . r + 4*t^2*k . k*(p . q)^2*r . r - 
+         6*m3^2*t*k . k*p . r*r . r + 4*t^2*k . k*p . q*p . r*r . r + 
+         6*m3^4*q . q*r . r - 12*m3^2*m4^2*q . q*r . r + 6*m4^4*q . q*r . r - 
+         12*m5^2*t*k . k*q . q*r . r + 6*t^2*(k . k)^2*q . q*r . r + 
+         6*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r + 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+         12*m3^2*t*k . r*q . q*r . r + 12*m4^2*t*k . r*q . q*r . r + 
+         12*t^2*k . k*k . r*q . q*r . r + 6*t^2*k . p*k . r*q . q*r . r - 
+         12*t^2*k . q*k . r*q . q*r . r + 2*t^2*k . k*p . p*q . q*r . r - 
+         12*t^2*k . k*p . q*q . q*r . r - 6*t^2*k . k*p . r*q . q*r . r + 
+         6*t^2*k . k*(q . q)^2*r . r + 12*m3^2*t*k . k*q . r*r . r + 
+         2*t^2*k . k*p . p*q . r*r . r - 12*t^2*k . k*p . q*q . r*r . r + 
+         12*t^2*k . k*q . q*q . r*r . r + t^2*k . k*p . p*(r . r)^2 - 
+         6*t^2*k . k*p . q*(r . r)^2 + 6*t^2*k . k*q . q*(r . r)^2 - 
+         2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+         4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+         12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+         2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) - 
+         6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) + 
+         6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) + 
+         12*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+         (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 6*k . p*k . q*
+          ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+            r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+         6*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)))*
+        (-6*m3^2*m4^2*k . p*k . r + 6*m3^2*m5^2*k . p*k . r + 
+          12*m3^2*m4^2*k . q*k . r - 12*m3^2*m5^2*k . q*k . r + 
+          6*m3^4*(k . r)^2 - 12*m3^2*t*k . p*(k . r)^2 + 
+          24*m3^2*t*k . q*(k . r)^2 - m4^4*k . k*p . p + 2*m4^2*m5^2*k . k*
+           p . p - m5^4*k . k*p . p + 2*m3^2*m4^2*k . r*p . p - 
+          2*m4^4*k . r*p . p - 2*m3^2*m5^2*k . r*p . p + 2*m4^2*m5^2*k . r*
+           p . p - 2*m4^2*t*k . k*k . r*p . p + 2*m5^2*t*k . k*k . r*p . p + 
+          2*m3^2*t*(k . r)^2*p . p - 4*m4^2*t*(k . r)^2*p . p + 
+          4*t^2*k . q*(k . r)^2*p . p + 6*m4^4*k . k*p . q - 
+          12*m4^2*m5^2*k . k*p . q + 6*m5^4*k . k*p . q - 
+          12*m3^2*m4^2*k . r*p . q + 12*m4^4*k . r*p . q + 
+          12*m3^2*m5^2*k . r*p . q - 12*m4^2*m5^2*k . r*p . q + 
+          12*m4^2*t*k . k*k . r*p . q - 12*m5^2*t*k . k*k . r*p . q - 
+          12*m3^2*t*(k . r)^2*p . q + 24*m4^2*t*(k . r)^2*p . q + 
+          8*t^2*k . p*(k . r)^2*p . q - 24*t^2*k . q*(k . r)^2*p . q + 
+          4*t^2*(k . r)^2*(p . q)^2 + 6*m3^2*m4^2*k . k*p . r - 
+          6*m3^2*m5^2*k . k*p . r - 6*m3^4*k . r*p . r + 6*m3^2*m4^2*k . r*
+           p . r + 6*m3^2*t*k . k*k . r*p . r + 4*m3^2*t*k . p*k . r*p . r + 
+          4*m4^2*t*k . p*k . r*p . r - 4*t^2*k . k*k . p*k . r*p . r - 
+          12*m3^2*t*k . q*k . r*p . r - 12*m4^2*t*k . q*k . r*p . r + 
+          12*t^2*k . k*k . q*k . r*p . r - 4*m4^2*t*k . k*p . q*p . r + 
+          4*m5^2*t*k . k*p . q*p . r + 4*m3^2*t*k . r*p . q*p . r - 
+          4*m4^2*t*k . r*p . q*p . r - 4*t^2*k . k*k . r*p . q*p . r + 
+          m3^4*(p . r)^2 - 2*m3^2*m4^2*(p . r)^2 + m4^4*(p . r)^2 - 
+          2*m3^2*t*k . k*(p . r)^2 - 2*m4^2*t*k . k*(p . r)^2 + 
+          t^2*(k . k)^2*(p . r)^2 - 6*m4^4*k . k*q . q + 12*m4^2*m5^2*k . k*
+           q . q - 6*m5^4*k . k*q . q + 12*m3^2*m4^2*k . r*q . q - 
+          12*m4^4*k . r*q . q - 12*m3^2*m5^2*k . r*q . q + 
+          12*m4^2*m5^2*k . r*q . q - 12*m4^2*t*k . k*k . r*q . q + 
+          12*m5^2*t*k . k*k . r*q . q - 6*m4^2*t*k . p*k . r*q . q + 
+          6*m5^2*t*k . p*k . r*q . q + 12*m4^2*t*k . q*k . r*q . q - 
+          12*m5^2*t*k . q*k . r*q . q + 12*m3^2*t*(k . r)^2*q . q - 
+          24*m4^2*t*(k . r)^2*q . q - 12*t^2*k . p*(k . r)^2*q . q + 
+          24*t^2*k . q*(k . r)^2*q . q + 2*t^2*(k . r)^2*p . p*q . q - 
+          12*t^2*(k . r)^2*p . q*q . q + 6*m4^2*t*k . k*p . r*q . q - 
+          6*m5^2*t*k . k*p . r*q . q - 6*m3^2*t*k . r*p . r*q . q + 
+          6*m4^2*t*k . r*p . r*q . q + 6*t^2*k . k*k . r*p . r*q . q + 
+          6*t^2*(k . r)^2*(q . q)^2 - 12*m3^2*m4^2*k . k*q . r + 
+          12*m3^2*m5^2*k . k*q . r + 12*m3^4*k . r*q . r - 
+          12*m3^2*m4^2*k . r*q . r - 12*m3^2*t*k . k*k . r*q . r - 
+          12*m3^2*t*k . p*k . r*q . r - 12*m4^2*t*k . p*k . r*q . r + 
+          12*t^2*k . k*k . p*k . r*q . r + 24*m3^2*t*k . q*k . r*q . r + 
+          24*m4^2*t*k . q*k . r*q . r - 24*t^2*k . k*k . q*k . r*q . r - 
+          2*m4^2*t*k . k*p . p*q . r + 2*m5^2*t*k . k*p . p*q . r + 
+          2*m3^2*t*k . r*p . p*q . r - 2*m4^2*t*k . r*p . p*q . r - 
+          2*t^2*k . k*k . r*p . p*q . r + 12*m4^2*t*k . k*p . q*q . r - 
+          12*m5^2*t*k . k*p . q*q . r - 12*m3^2*t*k . r*p . q*q . r + 
+          12*m4^2*t*k . r*p . q*q . r + 12*t^2*k . k*k . r*p . q*q . r - 
+          6*m3^4*p . r*q . r + 12*m3^2*m4^2*p . r*q . r - 
+          6*m4^4*p . r*q . r + 12*m3^2*t*k . k*p . r*q . r + 
+          12*m4^2*t*k . k*p . r*q . r - 6*t^2*(k . k)^2*p . r*q . r - 
+          12*m4^2*t*k . k*q . q*q . r + 12*m5^2*t*k . k*q . q*q . r + 
+          12*m3^2*t*k . r*q . q*q . r - 12*m4^2*t*k . r*q . q*q . r - 
+          12*t^2*k . k*k . r*q . q*q . r + 6*m3^4*(q . r)^2 - 
+          12*m3^2*m4^2*(q . r)^2 + 6*m4^4*(q . r)^2 - 12*m3^2*t*k . k*
+           (q . r)^2 - 12*m4^2*t*k . k*(q . r)^2 + 6*t^2*(k . k)^2*
+           (q . r)^2 - 6*m3^4*k . k*r . r - 6*m3^2*(-m3^2 + m4^2 - t*k . k)*
+           k . p*r . r - 12*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r - 
+          6*m3^2*t*k . p*k . r*r . r + 12*m3^2*t*k . q*k . r*r . r - 
+          m3^4*p . p*r . r + 2*m3^2*m4^2*p . p*r . r - m4^4*p . p*r . r + 
+          2*m5^2*t*k . k*p . p*r . r - t^2*(k . k)^2*p . p*r . r - 
+          2*t*(m3^2 - m4^2 + t*k . k)*k . q*p . p*r . r + 
+          2*m3^2*t*k . r*p . p*r . r - 2*m4^2*t*k . r*p . p*r . r - 
+          2*t^2*k . k*k . r*p . p*r . r + 6*m3^4*p . q*r . r - 
+          12*m3^2*m4^2*p . q*r . r + 6*m4^4*p . q*r . r - 
+          12*m5^2*t*k . k*p . q*r . r + 6*t^2*(k . k)^2*p . q*r . r + 
+          4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r + 
+          12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r - 
+          12*m3^2*t*k . r*p . q*r . r + 12*m4^2*t*k . r*p . q*r . r + 
+          12*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*(p . q)^2*r . r + 
+          6*m3^2*t*k . k*p . r*r . r - 4*t^2*k . k*p . q*p . r*r . r - 
+          6*m3^4*q . q*r . r + 12*m3^2*m4^2*q . q*r . r - 
+          6*m4^4*q . q*r . r + 12*m5^2*t*k . k*q . q*r . r - 
+          6*t^2*(k . k)^2*q . q*r . r - 6*t*(-m3^2 + m4^2 - t*k . k)*k . p*
+           q . q*r . r - 12*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r + 
+          12*m3^2*t*k . r*q . q*r . r - 12*m4^2*t*k . r*q . q*r . r - 
+          12*t^2*k . k*k . r*q . q*r . r - 6*t^2*k . p*k . r*q . q*r . r + 
+          12*t^2*k . q*k . r*q . q*r . r - 2*t^2*k . k*p . p*q . q*r . r + 
+          12*t^2*k . k*p . q*q . q*r . r + 6*t^2*k . k*p . r*q . q*r . r - 
+          6*t^2*k . k*(q . q)^2*r . r - 12*m3^2*t*k . k*q . r*r . r - 
+          2*t^2*k . k*p . p*q . r*r . r + 12*t^2*k . k*p . q*q . r*r . r - 
+          12*t^2*k . k*q . q*q . r*r . r - t^2*k . k*p . p*(r . r)^2 + 
+          6*t^2*k . k*p . q*(r . r)^2 - 6*t^2*k . k*q . q*(r . r)^2 + 
+          2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) + 
+          4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+          12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+          2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) + 
+          6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) - 
+          6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) - 
+          12*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) + 
+          (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+            2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+            4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 6*k . p*k . q*
+           ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+             r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 
+          6*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+            2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+            4*t*k . r*(m4^2 - m5^2 + t*r . r)))^2)/9 + 
+      (-6*m3^2*m4^2*k . p*k . r + 6*m3^2*m5^2*k . p*k . r + 
+         12*m3^2*m4^2*k . q*k . r - 12*m3^2*m5^2*k . q*k . r + 
+         6*m3^4*(k . r)^2 - 12*m3^2*t*k . p*(k . r)^2 + 
+         24*m3^2*t*k . q*(k . r)^2 - m4^4*k . k*p . p + 
+         2*m4^2*m5^2*k . k*p . p - m5^4*k . k*p . p + 2*m3^2*m4^2*k . r*
+          p . p - 2*m4^4*k . r*p . p - 2*m3^2*m5^2*k . r*p . p + 
+         2*m4^2*m5^2*k . r*p . p - 2*m4^2*t*k . k*k . r*p . p + 
+         2*m5^2*t*k . k*k . r*p . p + 2*m3^2*t*(k . r)^2*p . p - 
+         4*m4^2*t*(k . r)^2*p . p + 4*t^2*k . q*(k . r)^2*p . p + 
+         6*m4^4*k . k*p . q - 12*m4^2*m5^2*k . k*p . q + 6*m5^4*k . k*p . q - 
+         12*m3^2*m4^2*k . r*p . q + 12*m4^4*k . r*p . q + 
+         12*m3^2*m5^2*k . r*p . q - 12*m4^2*m5^2*k . r*p . q + 
+         12*m4^2*t*k . k*k . r*p . q - 12*m5^2*t*k . k*k . r*p . q - 
+         12*m3^2*t*(k . r)^2*p . q + 24*m4^2*t*(k . r)^2*p . q + 
+         8*t^2*k . p*(k . r)^2*p . q - 24*t^2*k . q*(k . r)^2*p . q + 
+         4*t^2*(k . r)^2*(p . q)^2 + 6*m3^2*m4^2*k . k*p . r - 
+         6*m3^2*m5^2*k . k*p . r - 6*m3^4*k . r*p . r + 
+         6*m3^2*m4^2*k . r*p . r + 6*m3^2*t*k . k*k . r*p . r + 
+         4*m3^2*t*k . p*k . r*p . r + 4*m4^2*t*k . p*k . r*p . r - 
+         4*t^2*k . k*k . p*k . r*p . r - 12*m3^2*t*k . q*k . r*p . r - 
+         12*m4^2*t*k . q*k . r*p . r + 12*t^2*k . k*k . q*k . r*p . r - 
+         4*m4^2*t*k . k*p . q*p . r + 4*m5^2*t*k . k*p . q*p . r + 
+         4*m3^2*t*k . r*p . q*p . r - 4*m4^2*t*k . r*p . q*p . r - 
+         4*t^2*k . k*k . r*p . q*p . r + m3^4*(p . r)^2 - 
+         2*m3^2*m4^2*(p . r)^2 + m4^4*(p . r)^2 - 2*m3^2*t*k . k*(p . r)^2 - 
+         2*m4^2*t*k . k*(p . r)^2 + t^2*(k . k)^2*(p . r)^2 - 
+         6*m4^4*k . k*q . q + 12*m4^2*m5^2*k . k*q . q - 6*m5^4*k . k*q . q + 
+         12*m3^2*m4^2*k . r*q . q - 12*m4^4*k . r*q . q - 
+         12*m3^2*m5^2*k . r*q . q + 12*m4^2*m5^2*k . r*q . q - 
+         12*m4^2*t*k . k*k . r*q . q + 12*m5^2*t*k . k*k . r*q . q - 
+         6*m4^2*t*k . p*k . r*q . q + 6*m5^2*t*k . p*k . r*q . q + 
+         12*m4^2*t*k . q*k . r*q . q - 12*m5^2*t*k . q*k . r*q . q + 
+         12*m3^2*t*(k . r)^2*q . q - 24*m4^2*t*(k . r)^2*q . q - 
+         12*t^2*k . p*(k . r)^2*q . q + 24*t^2*k . q*(k . r)^2*q . q + 
+         2*t^2*(k . r)^2*p . p*q . q - 12*t^2*(k . r)^2*p . q*q . q + 
+         6*m4^2*t*k . k*p . r*q . q - 6*m5^2*t*k . k*p . r*q . q - 
+         6*m3^2*t*k . r*p . r*q . q + 6*m4^2*t*k . r*p . r*q . q + 
+         6*t^2*k . k*k . r*p . r*q . q + 6*t^2*(k . r)^2*(q . q)^2 - 
+         12*m3^2*m4^2*k . k*q . r + 12*m3^2*m5^2*k . k*q . r + 
+         12*m3^4*k . r*q . r - 12*m3^2*m4^2*k . r*q . r - 
+         12*m3^2*t*k . k*k . r*q . r - 12*m3^2*t*k . p*k . r*q . r - 
+         12*m4^2*t*k . p*k . r*q . r + 12*t^2*k . k*k . p*k . r*q . r + 
+         24*m3^2*t*k . q*k . r*q . r + 24*m4^2*t*k . q*k . r*q . r - 
+         24*t^2*k . k*k . q*k . r*q . r - 2*m4^2*t*k . k*p . p*q . r + 
+         2*m5^2*t*k . k*p . p*q . r + 2*m3^2*t*k . r*p . p*q . r - 
+         2*m4^2*t*k . r*p . p*q . r - 2*t^2*k . k*k . r*p . p*q . r + 
+         12*m4^2*t*k . k*p . q*q . r - 12*m5^2*t*k . k*p . q*q . r - 
+         12*m3^2*t*k . r*p . q*q . r + 12*m4^2*t*k . r*p . q*q . r + 
+         12*t^2*k . k*k . r*p . q*q . r - 6*m3^4*p . r*q . r + 
+         12*m3^2*m4^2*p . r*q . r - 6*m4^4*p . r*q . r + 
+         12*m3^2*t*k . k*p . r*q . r + 12*m4^2*t*k . k*p . r*q . r - 
+         6*t^2*(k . k)^2*p . r*q . r - 12*m4^2*t*k . k*q . q*q . r + 
+         12*m5^2*t*k . k*q . q*q . r + 12*m3^2*t*k . r*q . q*q . r - 
+         12*m4^2*t*k . r*q . q*q . r - 12*t^2*k . k*k . r*q . q*q . r + 
+         6*m3^4*(q . r)^2 - 12*m3^2*m4^2*(q . r)^2 + 6*m4^4*(q . r)^2 - 
+         12*m3^2*t*k . k*(q . r)^2 - 12*m4^2*t*k . k*(q . r)^2 + 
+         6*t^2*(k . k)^2*(q . r)^2 - 6*m3^4*k . k*r . r - 
+         6*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r - 
+         12*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r - 6*m3^2*t*k . p*k . r*
+          r . r + 12*m3^2*t*k . q*k . r*r . r - m3^4*p . p*r . r + 
+         2*m3^2*m4^2*p . p*r . r - m4^4*p . p*r . r + 2*m5^2*t*k . k*p . p*
+          r . r - t^2*(k . k)^2*p . p*r . r - 2*t*(m3^2 - m4^2 + t*k . k)*
+          k . q*p . p*r . r + 2*m3^2*t*k . r*p . p*r . r - 
+         2*m4^2*t*k . r*p . p*r . r - 2*t^2*k . k*k . r*p . p*r . r + 
+         6*m3^4*p . q*r . r - 12*m3^2*m4^2*p . q*r . r + 6*m4^4*p . q*r . r - 
+         12*m5^2*t*k . k*p . q*r . r + 6*t^2*(k . k)^2*p . q*r . r + 
+         4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r + 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r - 
+         12*m3^2*t*k . r*p . q*r . r + 12*m4^2*t*k . r*p . q*r . r + 
+         12*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*(p . q)^2*r . r + 
+         6*m3^2*t*k . k*p . r*r . r - 4*t^2*k . k*p . q*p . r*r . r - 
+         6*m3^4*q . q*r . r + 12*m3^2*m4^2*q . q*r . r - 6*m4^4*q . q*r . r + 
+         12*m5^2*t*k . k*q . q*r . r - 6*t^2*(k . k)^2*q . q*r . r - 
+         6*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r - 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r + 
+         12*m3^2*t*k . r*q . q*r . r - 12*m4^2*t*k . r*q . q*r . r - 
+         12*t^2*k . k*k . r*q . q*r . r - 6*t^2*k . p*k . r*q . q*r . r + 
+         12*t^2*k . q*k . r*q . q*r . r - 2*t^2*k . k*p . p*q . q*r . r + 
+         12*t^2*k . k*p . q*q . q*r . r + 6*t^2*k . k*p . r*q . q*r . r - 
+         6*t^2*k . k*(q . q)^2*r . r - 12*m3^2*t*k . k*q . r*r . r - 
+         2*t^2*k . k*p . p*q . r*r . r + 12*t^2*k . k*p . q*q . r*r . r - 
+         12*t^2*k . k*q . q*q . r*r . r - t^2*k . k*p . p*(r . r)^2 + 
+         6*t^2*k . k*p . q*(r . r)^2 - 6*t^2*k . k*q . q*(r . r)^2 + 
+         2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) + 
+         4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+         12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+         2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) + 
+         6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) - 
+         6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) - 
+         12*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) + 
+         (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 6*k . p*k . q*
+          ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+            r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 
+         6*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)))^3/27 + 
+      ((-6*m3^2*m4^2*k . p*k . r + 6*m3^2*m5^2*k . p*k . r + 
+         12*m3^2*m4^2*k . q*k . r - 12*m3^2*m5^2*k . q*k . r + 
+         6*m3^4*(k . r)^2 - 12*m3^2*t*k . p*(k . r)^2 + 
+         24*m3^2*t*k . q*(k . r)^2 - m4^4*k . k*p . p + 
+         2*m4^2*m5^2*k . k*p . p - m5^4*k . k*p . p + 2*m3^2*m4^2*k . r*
+          p . p - 2*m4^4*k . r*p . p - 2*m3^2*m5^2*k . r*p . p + 
+         2*m4^2*m5^2*k . r*p . p - 2*m4^2*t*k . k*k . r*p . p + 
+         2*m5^2*t*k . k*k . r*p . p + 2*m3^2*t*(k . r)^2*p . p - 
+         4*m4^2*t*(k . r)^2*p . p + 4*t^2*k . q*(k . r)^2*p . p + 
+         6*m4^4*k . k*p . q - 12*m4^2*m5^2*k . k*p . q + 6*m5^4*k . k*p . q - 
+         12*m3^2*m4^2*k . r*p . q + 12*m4^4*k . r*p . q + 
+         12*m3^2*m5^2*k . r*p . q - 12*m4^2*m5^2*k . r*p . q + 
+         12*m4^2*t*k . k*k . r*p . q - 12*m5^2*t*k . k*k . r*p . q - 
+         12*m3^2*t*(k . r)^2*p . q + 24*m4^2*t*(k . r)^2*p . q + 
+         8*t^2*k . p*(k . r)^2*p . q - 24*t^2*k . q*(k . r)^2*p . q + 
+         4*t^2*(k . r)^2*(p . q)^2 + 6*m3^2*m4^2*k . k*p . r - 
+         6*m3^2*m5^2*k . k*p . r - 6*m3^4*k . r*p . r + 
+         6*m3^2*m4^2*k . r*p . r + 6*m3^2*t*k . k*k . r*p . r + 
+         4*m3^2*t*k . p*k . r*p . r + 4*m4^2*t*k . p*k . r*p . r - 
+         4*t^2*k . k*k . p*k . r*p . r - 12*m3^2*t*k . q*k . r*p . r - 
+         12*m4^2*t*k . q*k . r*p . r + 12*t^2*k . k*k . q*k . r*p . r - 
+         4*m4^2*t*k . k*p . q*p . r + 4*m5^2*t*k . k*p . q*p . r + 
+         4*m3^2*t*k . r*p . q*p . r - 4*m4^2*t*k . r*p . q*p . r - 
+         4*t^2*k . k*k . r*p . q*p . r + m3^4*(p . r)^2 - 
+         2*m3^2*m4^2*(p . r)^2 + m4^4*(p . r)^2 - 2*m3^2*t*k . k*(p . r)^2 - 
+         2*m4^2*t*k . k*(p . r)^2 + t^2*(k . k)^2*(p . r)^2 - 
+         6*m4^4*k . k*q . q + 12*m4^2*m5^2*k . k*q . q - 6*m5^4*k . k*q . q + 
+         12*m3^2*m4^2*k . r*q . q - 12*m4^4*k . r*q . q - 
+         12*m3^2*m5^2*k . r*q . q + 12*m4^2*m5^2*k . r*q . q - 
+         12*m4^2*t*k . k*k . r*q . q + 12*m5^2*t*k . k*k . r*q . q - 
+         6*m4^2*t*k . p*k . r*q . q + 6*m5^2*t*k . p*k . r*q . q + 
+         12*m4^2*t*k . q*k . r*q . q - 12*m5^2*t*k . q*k . r*q . q + 
+         12*m3^2*t*(k . r)^2*q . q - 24*m4^2*t*(k . r)^2*q . q - 
+         12*t^2*k . p*(k . r)^2*q . q + 24*t^2*k . q*(k . r)^2*q . q + 
+         2*t^2*(k . r)^2*p . p*q . q - 12*t^2*(k . r)^2*p . q*q . q + 
+         6*m4^2*t*k . k*p . r*q . q - 6*m5^2*t*k . k*p . r*q . q - 
+         6*m3^2*t*k . r*p . r*q . q + 6*m4^2*t*k . r*p . r*q . q + 
+         6*t^2*k . k*k . r*p . r*q . q + 6*t^2*(k . r)^2*(q . q)^2 - 
+         12*m3^2*m4^2*k . k*q . r + 12*m3^2*m5^2*k . k*q . r + 
+         12*m3^4*k . r*q . r - 12*m3^2*m4^2*k . r*q . r - 
+         12*m3^2*t*k . k*k . r*q . r - 12*m3^2*t*k . p*k . r*q . r - 
+         12*m4^2*t*k . p*k . r*q . r + 12*t^2*k . k*k . p*k . r*q . r + 
+         24*m3^2*t*k . q*k . r*q . r + 24*m4^2*t*k . q*k . r*q . r - 
+         24*t^2*k . k*k . q*k . r*q . r - 2*m4^2*t*k . k*p . p*q . r + 
+         2*m5^2*t*k . k*p . p*q . r + 2*m3^2*t*k . r*p . p*q . r - 
+         2*m4^2*t*k . r*p . p*q . r - 2*t^2*k . k*k . r*p . p*q . r + 
+         12*m4^2*t*k . k*p . q*q . r - 12*m5^2*t*k . k*p . q*q . r - 
+         12*m3^2*t*k . r*p . q*q . r + 12*m4^2*t*k . r*p . q*q . r + 
+         12*t^2*k . k*k . r*p . q*q . r - 6*m3^4*p . r*q . r + 
+         12*m3^2*m4^2*p . r*q . r - 6*m4^4*p . r*q . r + 
+         12*m3^2*t*k . k*p . r*q . r + 12*m4^2*t*k . k*p . r*q . r - 
+         6*t^2*(k . k)^2*p . r*q . r - 12*m4^2*t*k . k*q . q*q . r + 
+         12*m5^2*t*k . k*q . q*q . r + 12*m3^2*t*k . r*q . q*q . r - 
+         12*m4^2*t*k . r*q . q*q . r - 12*t^2*k . k*k . r*q . q*q . r + 
+         6*m3^4*(q . r)^2 - 12*m3^2*m4^2*(q . r)^2 + 6*m4^4*(q . r)^2 - 
+         12*m3^2*t*k . k*(q . r)^2 - 12*m4^2*t*k . k*(q . r)^2 + 
+         6*t^2*(k . k)^2*(q . r)^2 - 6*m3^4*k . k*r . r - 
+         6*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r - 
+         12*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r - 6*m3^2*t*k . p*k . r*
+          r . r + 12*m3^2*t*k . q*k . r*r . r - m3^4*p . p*r . r + 
+         2*m3^2*m4^2*p . p*r . r - m4^4*p . p*r . r + 2*m5^2*t*k . k*p . p*
+          r . r - t^2*(k . k)^2*p . p*r . r - 2*t*(m3^2 - m4^2 + t*k . k)*
+          k . q*p . p*r . r + 2*m3^2*t*k . r*p . p*r . r - 
+         2*m4^2*t*k . r*p . p*r . r - 2*t^2*k . k*k . r*p . p*r . r + 
+         6*m3^4*p . q*r . r - 12*m3^2*m4^2*p . q*r . r + 6*m4^4*p . q*r . r - 
+         12*m5^2*t*k . k*p . q*r . r + 6*t^2*(k . k)^2*p . q*r . r + 
+         4*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r + 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r - 
+         12*m3^2*t*k . r*p . q*r . r + 12*m4^2*t*k . r*p . q*r . r + 
+         12*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*(p . q)^2*r . r + 
+         6*m3^2*t*k . k*p . r*r . r - 4*t^2*k . k*p . q*p . r*r . r - 
+         6*m3^4*q . q*r . r + 12*m3^2*m4^2*q . q*r . r - 6*m4^4*q . q*r . r + 
+         12*m5^2*t*k . k*q . q*r . r - 6*t^2*(k . k)^2*q . q*r . r - 
+         6*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r - 
+         12*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r + 
+         12*m3^2*t*k . r*q . q*r . r - 12*m4^2*t*k . r*q . q*r . r - 
+         12*t^2*k . k*k . r*q . q*r . r - 6*t^2*k . p*k . r*q . q*r . r + 
+         12*t^2*k . q*k . r*q . q*r . r - 2*t^2*k . k*p . p*q . q*r . r + 
+         12*t^2*k . k*p . q*q . q*r . r + 6*t^2*k . k*p . r*q . q*r . r - 
+         6*t^2*k . k*(q . q)^2*r . r - 12*m3^2*t*k . k*q . r*r . r - 
+         2*t^2*k . k*p . p*q . r*r . r + 12*t^2*k . k*p . q*q . r*r . r - 
+         12*t^2*k . k*q . q*q . r*r . r - t^2*k . k*p . p*(r . r)^2 + 
+         6*t^2*k . k*p . q*(r . r)^2 - 6*t^2*k . k*q . q*(r . r)^2 + 
+         2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) + 
+         4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+         12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+         2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) + 
+         6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) - 
+         6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) - 
+         12*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) + 
+         (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 6*k . p*k . q*
+          ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+            r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 
+         6*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+           2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+           4*t*k . r*(m4^2 - m5^2 + t*r . r)))*
+        ((2*m3^2*m4^2*k . p*k . r - 2*m3^2*m5^2*k . p*k . r - 
+           8*m3^2*m4^2*k . q*k . r + 8*m3^2*m5^2*k . q*k . r - 
+           4*m3^4*(k . r)^2 + 4*m3^2*t*k . p*(k . r)^2 - 16*m3^2*t*k . q*
+            (k . r)^2 - 2*m4^4*k . k*p . q + 4*m4^2*m5^2*k . k*p . q - 
+           2*m5^4*k . k*p . q + 4*m3^2*m4^2*k . r*p . q - 
+           4*m4^4*k . r*p . q - 4*m3^2*m5^2*k . r*p . q + 4*m4^2*m5^2*k . r*
+            p . q - 4*m4^2*t*k . k*k . r*p . q + 4*m5^2*t*k . k*k . r*p . q + 
+           4*m3^2*t*(k . r)^2*p . q - 8*m4^2*t*(k . r)^2*p . q + 
+           8*t^2*k . q*(k . r)^2*p . q - 2*m3^2*m4^2*k . k*p . r + 
+           2*m3^2*m5^2*k . k*p . r + 2*m3^4*k . r*p . r - 2*m3^2*m4^2*k . r*
+            p . r - 2*m3^2*t*k . k*k . r*p . r + 4*m3^2*t*k . q*k . r*p . r + 
+           4*m4^2*t*k . q*k . r*p . r - 4*t^2*k . k*k . q*k . r*p . r + 
+           4*m4^4*k . k*q . q - 8*m4^2*m5^2*k . k*q . q + 
+           4*m5^4*k . k*q . q - 8*m3^2*m4^2*k . r*q . q + 
+           8*m4^4*k . r*q . q + 8*m3^2*m5^2*k . r*q . q - 8*m4^2*m5^2*k . r*
+            q . q + 8*m4^2*t*k . k*k . r*q . q - 8*m5^2*t*k . k*k . r*q . q + 
+           2*m4^2*t*k . p*k . r*q . q - 2*m5^2*t*k . p*k . r*q . q - 
+           8*m4^2*t*k . q*k . r*q . q + 8*m5^2*t*k . q*k . r*q . q - 
+           8*m3^2*t*(k . r)^2*q . q + 16*m4^2*t*(k . r)^2*q . q + 
+           4*t^2*k . p*(k . r)^2*q . q - 16*t^2*k . q*(k . r)^2*q . q + 
+           4*t^2*(k . r)^2*p . q*q . q - 2*m4^2*t*k . k*p . r*q . q + 
+           2*m5^2*t*k . k*p . r*q . q + 2*m3^2*t*k . r*p . r*q . q - 
+           2*m4^2*t*k . r*p . r*q . q - 2*t^2*k . k*k . r*p . r*q . q - 
+           4*t^2*(k . r)^2*(q . q)^2 + 8*m3^2*m4^2*k . k*q . r - 
+           8*m3^2*m5^2*k . k*q . r - 8*m3^4*k . r*q . r + 8*m3^2*m4^2*k . r*
+            q . r + 8*m3^2*t*k . k*k . r*q . r + 4*m3^2*t*k . p*k . r*q . r + 
+           4*m4^2*t*k . p*k . r*q . r - 4*t^2*k . k*k . p*k . r*q . r - 
+           16*m3^2*t*k . q*k . r*q . r - 16*m4^2*t*k . q*k . r*q . r + 
+           16*t^2*k . k*k . q*k . r*q . r - 4*m4^2*t*k . k*p . q*q . r + 
+           4*m5^2*t*k . k*p . q*q . r + 4*m3^2*t*k . r*p . q*q . r - 
+           4*m4^2*t*k . r*p . q*q . r - 4*t^2*k . k*k . r*p . q*q . r + 
+           2*m3^4*p . r*q . r - 4*m3^2*m4^2*p . r*q . r + 
+           2*m4^4*p . r*q . r - 4*m3^2*t*k . k*p . r*q . r - 
+           4*m4^2*t*k . k*p . r*q . r + 2*t^2*(k . k)^2*p . r*q . r + 
+           8*m4^2*t*k . k*q . q*q . r - 8*m5^2*t*k . k*q . q*q . r - 
+           8*m3^2*t*k . r*q . q*q . r + 8*m4^2*t*k . r*q . q*q . r + 
+           8*t^2*k . k*k . r*q . q*q . r - 4*m3^4*(q . r)^2 + 
+           8*m3^2*m4^2*(q . r)^2 - 4*m4^4*(q . r)^2 + 8*m3^2*t*k . k*
+            (q . r)^2 + 8*m4^2*t*k . k*(q . r)^2 - 4*t^2*(k . k)^2*
+            (q . r)^2 + 4*m3^4*k . k*r . r + 2*m3^2*(-m3^2 + m4^2 - t*k . k)*
+            k . p*r . r + 8*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 
+           2*m3^2*t*k . p*k . r*r . r - 8*m3^2*t*k . q*k . r*r . r - 
+           2*m3^4*p . q*r . r + 4*m3^2*m4^2*p . q*r . r - 
+           2*m4^4*p . q*r . r + 4*m5^2*t*k . k*p . q*r . r - 
+           2*t^2*(k . k)^2*p . q*r . r - 4*t*(m3^2 - m4^2 + t*k . k)*k . q*
+            p . q*r . r + 4*m3^2*t*k . r*p . q*r . r - 4*m4^2*t*k . r*p . q*
+            r . r - 4*t^2*k . k*k . r*p . q*r . r - 2*m3^2*t*k . k*p . r*
+            r . r + 4*m3^4*q . q*r . r - 8*m3^2*m4^2*q . q*r . r + 
+           4*m4^4*q . q*r . r - 8*m5^2*t*k . k*q . q*r . r + 
+           4*t^2*(k . k)^2*q . q*r . r + 2*t*(-m3^2 + m4^2 - t*k . k)*k . p*
+            q . q*r . r + 8*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+           8*m3^2*t*k . r*q . q*r . r + 8*m4^2*t*k . r*q . q*r . r + 
+           8*t^2*k . k*k . r*q . q*r . r + 2*t^2*k . p*k . r*q . q*r . r - 
+           8*t^2*k . q*k . r*q . q*r . r - 4*t^2*k . k*p . q*q . q*r . r - 
+           2*t^2*k . k*p . r*q . q*r . r + 4*t^2*k . k*(q . q)^2*r . r + 
+           8*m3^2*t*k . k*q . r*r . r - 4*t^2*k . k*p . q*q . r*r . r + 
+           8*t^2*k . k*q . q*q . r*r . r - 2*t^2*k . k*p . q*(r . r)^2 + 
+           4*t^2*k . k*q . q*(r . r)^2 + 4*t*k . q*k . r*p . q*
+            (m4^2 - m5^2 + t*r . r) - 2*(m3^2 - m4^2 + t*k . k)*k . q*p . r*
+            (m4^2 - m5^2 + t*r . r) + 2*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*
+            (m4^2 - m5^2 + t*r . r) + 8*(m3^2 - m4^2 + t*k . k)*k . q*q . r*
+            (m4^2 - m5^2 + t*r . r) + 2*k . p*k . q*((m4^2 - m5^2)^2 + 
+             4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*r . r + 
+             t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+           4*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+             2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+             4*t*k . r*(m4^2 - m5^2 + t*r . r)))*(6*m3^2*m4^2*k . p*k . r - 
+           6*m3^2*m5^2*k . p*k . r - 8*m3^2*m4^2*k . q*k . r + 
+           8*m3^2*m5^2*k . q*k . r - 4*m3^4*(k . r)^2 + 12*m3^2*t*k . p*
+            (k . r)^2 - 16*m3^2*t*k . q*(k . r)^2 + 2*m4^4*k . k*p . p - 
+           4*m4^2*m5^2*k . k*p . p + 2*m5^4*k . k*p . p - 4*m3^2*m4^2*k . r*
+            p . p + 4*m4^4*k . r*p . p + 4*m3^2*m5^2*k . r*p . p - 
+           4*m4^2*m5^2*k . r*p . p + 4*m4^2*t*k . k*k . r*p . p - 
+           4*m5^2*t*k . k*k . r*p . p - 4*m3^2*t*(k . r)^2*p . p + 
+           8*m4^2*t*(k . r)^2*p . p + 4*t^2*k . p*(k . r)^2*p . p - 
+           8*t^2*k . q*(k . r)^2*p . p - 6*m4^4*k . k*p . q + 
+           12*m4^2*m5^2*k . k*p . q - 6*m5^4*k . k*p . q + 
+           12*m3^2*m4^2*k . r*p . q - 12*m4^4*k . r*p . q - 
+           12*m3^2*m5^2*k . r*p . q + 12*m4^2*m5^2*k . r*p . q - 
+           12*m4^2*t*k . k*k . r*p . q + 12*m5^2*t*k . k*k . r*p . q + 
+           12*m3^2*t*(k . r)^2*p . q - 24*m4^2*t*(k . r)^2*p . q - 
+           16*t^2*k . p*(k . r)^2*p . q + 24*t^2*k . q*(k . r)^2*p . q + 
+           4*t^2*(k . r)^2*p . p*p . q - 8*t^2*(k . r)^2*(p . q)^2 - 
+           6*m3^2*m4^2*k . k*p . r + 6*m3^2*m5^2*k . k*p . r + 
+           6*m3^4*k . r*p . r - 6*m3^2*m4^2*k . r*p . r - 
+           6*m3^2*t*k . k*k . r*p . r - 8*m3^2*t*k . p*k . r*p . r - 
+           8*m4^2*t*k . p*k . r*p . r + 8*t^2*k . k*k . p*k . r*p . r + 
+           12*m3^2*t*k . q*k . r*p . r + 12*m4^2*t*k . q*k . r*p . r - 
+           12*t^2*k . k*k . q*k . r*p . r - 2*m4^2*t*k . k*p . p*p . r + 
+           2*m5^2*t*k . k*p . p*p . r + 2*m3^2*t*k . r*p . p*p . r - 
+           2*m4^2*t*k . r*p . p*p . r - 2*t^2*k . k*k . r*p . p*p . r + 
+           8*m4^2*t*k . k*p . q*p . r - 8*m5^2*t*k . k*p . q*p . r - 
+           8*m3^2*t*k . r*p . q*p . r + 8*m4^2*t*k . r*p . q*p . r + 
+           8*t^2*k . k*k . r*p . q*p . r - 2*m3^4*(p . r)^2 + 
+           4*m3^2*m4^2*(p . r)^2 - 2*m4^4*(p . r)^2 + 4*m3^2*t*k . k*
+            (p . r)^2 + 4*m4^2*t*k . k*(p . r)^2 - 2*t^2*(k . k)^2*
+            (p . r)^2 + 4*m4^4*k . k*q . q - 8*m4^2*m5^2*k . k*q . q + 
+           4*m5^4*k . k*q . q - 8*m3^2*m4^2*k . r*q . q + 
+           8*m4^4*k . r*q . q + 8*m3^2*m5^2*k . r*q . q - 8*m4^2*m5^2*k . r*
+            q . q + 8*m4^2*t*k . k*k . r*q . q - 8*m5^2*t*k . k*k . r*q . q + 
+           6*m4^2*t*k . p*k . r*q . q - 6*m5^2*t*k . p*k . r*q . q - 
+           8*m4^2*t*k . q*k . r*q . q + 8*m5^2*t*k . q*k . r*q . q - 
+           8*m3^2*t*(k . r)^2*q . q + 16*m4^2*t*(k . r)^2*q . q + 
+           12*t^2*k . p*(k . r)^2*q . q - 16*t^2*k . q*(k . r)^2*q . q - 
+           4*t^2*(k . r)^2*p . p*q . q + 12*t^2*(k . r)^2*p . q*q . q - 
+           6*m4^2*t*k . k*p . r*q . q + 6*m5^2*t*k . k*p . r*q . q + 
+           6*m3^2*t*k . r*p . r*q . q - 6*m4^2*t*k . r*p . r*q . q - 
+           6*t^2*k . k*k . r*p . r*q . q - 4*t^2*(k . r)^2*(q . q)^2 + 
+           8*m3^2*m4^2*k . k*q . r - 8*m3^2*m5^2*k . k*q . r - 
+           8*m3^4*k . r*q . r + 8*m3^2*m4^2*k . r*q . r + 
+           8*m3^2*t*k . k*k . r*q . r + 12*m3^2*t*k . p*k . r*q . r + 
+           12*m4^2*t*k . p*k . r*q . r - 12*t^2*k . k*k . p*k . r*q . r - 
+           16*m3^2*t*k . q*k . r*q . r - 16*m4^2*t*k . q*k . r*q . r + 
+           16*t^2*k . k*k . q*k . r*q . r + 4*m4^2*t*k . k*p . p*q . r - 
+           4*m5^2*t*k . k*p . p*q . r - 4*m3^2*t*k . r*p . p*q . r + 
+           4*m4^2*t*k . r*p . p*q . r + 4*t^2*k . k*k . r*p . p*q . r - 
+           12*m4^2*t*k . k*p . q*q . r + 12*m5^2*t*k . k*p . q*q . r + 
+           12*m3^2*t*k . r*p . q*q . r - 12*m4^2*t*k . r*p . q*q . r - 
+           12*t^2*k . k*k . r*p . q*q . r + 6*m3^4*p . r*q . r - 
+           12*m3^2*m4^2*p . r*q . r + 6*m4^4*p . r*q . r - 
+           12*m3^2*t*k . k*p . r*q . r - 12*m4^2*t*k . k*p . r*q . r + 
+           6*t^2*(k . k)^2*p . r*q . r + 8*m4^2*t*k . k*q . q*q . r - 
+           8*m5^2*t*k . k*q . q*q . r - 8*m3^2*t*k . r*q . q*q . r + 
+           8*m4^2*t*k . r*q . q*q . r + 8*t^2*k . k*k . r*q . q*q . r - 
+           4*m3^4*(q . r)^2 + 8*m3^2*m4^2*(q . r)^2 - 4*m4^4*(q . r)^2 + 
+           8*m3^2*t*k . k*(q . r)^2 + 8*m4^2*t*k . k*(q . r)^2 - 
+           4*t^2*(k . k)^2*(q . r)^2 + 4*m3^4*k . k*r . r + 
+           6*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+           8*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 6*m3^2*t*k . p*k . r*
+            r . r - 8*m3^2*t*k . q*k . r*r . r + 2*m3^4*p . p*r . r - 
+           4*m3^2*m4^2*p . p*r . r + 2*m4^4*p . p*r . r - 
+           4*m5^2*t*k . k*p . p*r . r + 2*t^2*(k . k)^2*p . p*r . r + 
+           2*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . p*r . r + 
+           4*t*(m3^2 - m4^2 + t*k . k)*k . q*p . p*r . r - 
+           4*m3^2*t*k . r*p . p*r . r + 4*m4^2*t*k . r*p . p*r . r + 
+           4*t^2*k . k*k . r*p . p*r . r - 6*m3^4*p . q*r . r + 
+           12*m3^2*m4^2*p . q*r . r - 6*m4^4*p . q*r . r + 
+           12*m5^2*t*k . k*p . q*r . r - 6*t^2*(k . k)^2*p . q*r . r - 
+           8*t*(-m3^2 + m4^2 - t*k . k)*k . p*p . q*r . r - 
+           12*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r + 
+           12*m3^2*t*k . r*p . q*r . r - 12*m4^2*t*k . r*p . q*r . r - 
+           12*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*p . p*p . q*r . r + 
+           8*t^2*k . k*(p . q)^2*r . r - 6*m3^2*t*k . k*p . r*r . r - 
+           2*t^2*k . k*p . p*p . r*r . r + 8*t^2*k . k*p . q*p . r*r . r + 
+           4*m3^4*q . q*r . r - 8*m3^2*m4^2*q . q*r . r + 
+           4*m4^4*q . q*r . r - 8*m5^2*t*k . k*q . q*r . r + 
+           4*t^2*(k . k)^2*q . q*r . r + 6*t*(-m3^2 + m4^2 - t*k . k)*k . p*
+            q . q*r . r + 8*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+           8*m3^2*t*k . r*q . q*r . r + 8*m4^2*t*k . r*q . q*r . r + 
+           8*t^2*k . k*k . r*q . q*r . r + 6*t^2*k . p*k . r*q . q*r . r - 
+           8*t^2*k . q*k . r*q . q*r . r + 4*t^2*k . k*p . p*q . q*r . r - 
+           12*t^2*k . k*p . q*q . q*r . r - 6*t^2*k . k*p . r*q . q*r . r + 
+           4*t^2*k . k*(q . q)^2*r . r + 8*m3^2*t*k . k*q . r*r . r + 
+           4*t^2*k . k*p . p*q . r*r . r - 12*t^2*k . k*p . q*q . r*r . r + 
+           8*t^2*k . k*q . q*q . r*r . r + 2*t^2*k . k*p . p*(r . r)^2 - 
+           6*t^2*k . k*p . q*(r . r)^2 + 4*t^2*k . k*q . q*(r . r)^2 + 
+           2*t*k . p*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+           4*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+           8*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+           12*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+           4*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) - 
+           6*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) + 
+           6*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) + 
+           8*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+           2*(k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+             2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+             4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 6*k . p*k . q*
+            ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+              r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+           4*(k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+             2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+             4*t*k . r*(m4^2 - m5^2 + t*r . r))) - 
+         4*(-2*m3^2*m4^2*k . q*k . r + 2*m3^2*m5^2*k . q*k . r - 
+           m3^4*(k . r)^2 - 4*m3^2*t*k . q*(k . r)^2 + m4^4*k . k*q . q - 
+           2*m4^2*m5^2*k . k*q . q + m5^4*k . k*q . q - 2*m3^2*m4^2*k . r*
+            q . q + 2*m4^4*k . r*q . q + 2*m3^2*m5^2*k . r*q . q - 
+           2*m4^2*m5^2*k . r*q . q + 2*m4^2*t*k . k*k . r*q . q - 
+           2*m5^2*t*k . k*k . r*q . q - 2*m4^2*t*k . q*k . r*q . q + 
+           2*m5^2*t*k . q*k . r*q . q - 2*m3^2*t*(k . r)^2*q . q + 
+           4*m4^2*t*(k . r)^2*q . q - 4*t^2*k . q*(k . r)^2*q . q - 
+           t^2*(k . r)^2*(q . q)^2 + 2*m3^2*m4^2*k . k*q . r - 
+           2*m3^2*m5^2*k . k*q . r - 2*m3^4*k . r*q . r + 2*m3^2*m4^2*k . r*
+            q . r + 2*m3^2*t*k . k*k . r*q . r - 4*m3^2*t*k . q*k . r*q . r - 
+           4*m4^2*t*k . q*k . r*q . r + 4*t^2*k . k*k . q*k . r*q . r + 
+           2*m4^2*t*k . k*q . q*q . r - 2*m5^2*t*k . k*q . q*q . r - 
+           2*m3^2*t*k . r*q . q*q . r + 2*m4^2*t*k . r*q . q*q . r + 
+           2*t^2*k . k*k . r*q . q*q . r - m3^4*(q . r)^2 + 
+           2*m3^2*m4^2*(q . r)^2 - m4^4*(q . r)^2 + 2*m3^2*t*k . k*
+            (q . r)^2 + 2*m4^2*t*k . k*(q . r)^2 - t^2*(k . k)^2*(q . r)^2 + 
+           m3^4*k . k*r . r + 2*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r - 
+           2*m3^2*t*k . q*k . r*r . r + m3^4*q . q*r . r - 
+           2*m3^2*m4^2*q . q*r . r + m4^4*q . q*r . r - 2*m5^2*t*k . k*q . q*
+            r . r + t^2*(k . k)^2*q . q*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*
+            k . q*q . q*r . r - 2*m3^2*t*k . r*q . q*r . r + 
+           2*m4^2*t*k . r*q . q*r . r + 2*t^2*k . k*k . r*q . q*r . r - 
+           2*t^2*k . q*k . r*q . q*r . r + t^2*k . k*(q . q)^2*r . r + 
+           2*m3^2*t*k . k*q . r*r . r + 2*t^2*k . k*q . q*q . r*r . r + 
+           t^2*k . k*q . q*(r . r)^2 + 2*(m3^2 - m4^2 + t*k . k)*k . q*q . r*
+            (m4^2 - m5^2 + t*r . r) - (k . q)^2*((m4^2 - m5^2)^2 + 
+             4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*r . r + 
+             t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)))*
+          (2*m3^2*m4^2*k . p*k . r - 2*m3^2*m5^2*k . p*k . r - 
+           2*m3^2*m4^2*k . q*k . r + 2*m3^2*m5^2*k . q*k . r - 
+           m3^4*(k . r)^2 + 4*m3^2*t*k . p*(k . r)^2 - 4*m3^2*t*k . q*
+            (k . r)^2 + m4^4*k . k*p . p - 2*m4^2*m5^2*k . k*p . p + 
+           m5^4*k . k*p . p - 2*m3^2*m4^2*k . r*p . p + 2*m4^4*k . r*p . p + 
+           2*m3^2*m5^2*k . r*p . p - 2*m4^2*m5^2*k . r*p . p + 
+           2*m4^2*t*k . k*k . r*p . p - 2*m5^2*t*k . k*k . r*p . p - 
+           2*m3^2*t*(k . r)^2*p . p + 4*m4^2*t*(k . r)^2*p . p + 
+           4*t^2*k . p*(k . r)^2*p . p - 4*t^2*k . q*(k . r)^2*p . p - 
+           t^2*(k . r)^2*(p . p)^2 - 2*m4^4*k . k*p . q + 4*m4^2*m5^2*k . k*
+            p . q - 2*m5^4*k . k*p . q + 4*m3^2*m4^2*k . r*p . q - 
+           4*m4^4*k . r*p . q - 4*m3^2*m5^2*k . r*p . q + 4*m4^2*m5^2*k . r*
+            p . q - 4*m4^2*t*k . k*k . r*p . q + 4*m5^2*t*k . k*k . r*p . q + 
+           4*m3^2*t*(k . r)^2*p . q - 8*m4^2*t*(k . r)^2*p . q - 
+           8*t^2*k . p*(k . r)^2*p . q + 8*t^2*k . q*(k . r)^2*p . q + 
+           4*t^2*(k . r)^2*p . p*p . q - 4*t^2*(k . r)^2*(p . q)^2 - 
+           2*m3^2*m4^2*k . k*p . r + 2*m3^2*m5^2*k . k*p . r + 
+           2*m3^4*k . r*p . r - 2*m3^2*m4^2*k . r*p . r - 
+           2*m3^2*t*k . k*k . r*p . r - 4*m3^2*t*k . p*k . r*p . r - 
+           4*m4^2*t*k . p*k . r*p . r + 4*t^2*k . k*k . p*k . r*p . r + 
+           4*m3^2*t*k . q*k . r*p . r + 4*m4^2*t*k . q*k . r*p . r - 
+           4*t^2*k . k*k . q*k . r*p . r - 2*m4^2*t*k . k*p . p*p . r + 
+           2*m5^2*t*k . k*p . p*p . r + 2*m3^2*t*k . r*p . p*p . r - 
+           2*m4^2*t*k . r*p . p*p . r - 2*t^2*k . k*k . r*p . p*p . r + 
+           4*m4^2*t*k . k*p . q*p . r - 4*m5^2*t*k . k*p . q*p . r - 
+           4*m3^2*t*k . r*p . q*p . r + 4*m4^2*t*k . r*p . q*p . r + 
+           4*t^2*k . k*k . r*p . q*p . r - m3^4*(p . r)^2 + 
+           2*m3^2*m4^2*(p . r)^2 - m4^4*(p . r)^2 + 2*m3^2*t*k . k*
+            (p . r)^2 + 2*m4^2*t*k . k*(p . r)^2 - t^2*(k . k)^2*(p . r)^2 + 
+           m4^4*k . k*q . q - 2*m4^2*m5^2*k . k*q . q + m5^4*k . k*q . q - 
+           2*m3^2*m4^2*k . r*q . q + 2*m4^4*k . r*q . q + 2*m3^2*m5^2*k . r*
+            q . q - 2*m4^2*m5^2*k . r*q . q + 2*m4^2*t*k . k*k . r*q . q - 
+           2*m5^2*t*k . k*k . r*q . q + 2*m4^2*t*k . p*k . r*q . q - 
+           2*m5^2*t*k . p*k . r*q . q - 2*m4^2*t*k . q*k . r*q . q + 
+           2*m5^2*t*k . q*k . r*q . q - 2*m3^2*t*(k . r)^2*q . q + 
+           4*m4^2*t*(k . r)^2*q . q + 4*t^2*k . p*(k . r)^2*q . q - 
+           4*t^2*k . q*(k . r)^2*q . q - 2*t^2*(k . r)^2*p . p*q . q + 
+           4*t^2*(k . r)^2*p . q*q . q - 2*m4^2*t*k . k*p . r*q . q + 
+           2*m5^2*t*k . k*p . r*q . q + 2*m3^2*t*k . r*p . r*q . q - 
+           2*m4^2*t*k . r*p . r*q . q - 2*t^2*k . k*k . r*p . r*q . q - 
+           t^2*(k . r)^2*(q . q)^2 + 2*m3^2*m4^2*k . k*q . r - 
+           2*m3^2*m5^2*k . k*q . r - 2*m3^4*k . r*q . r + 2*m3^2*m4^2*k . r*
+            q . r + 2*m3^2*t*k . k*k . r*q . r + 4*m3^2*t*k . p*k . r*q . r + 
+           4*m4^2*t*k . p*k . r*q . r - 4*t^2*k . k*k . p*k . r*q . r - 
+           4*m3^2*t*k . q*k . r*q . r - 4*m4^2*t*k . q*k . r*q . r + 
+           4*t^2*k . k*k . q*k . r*q . r + 2*m4^2*t*k . k*p . p*q . r - 
+           2*m5^2*t*k . k*p . p*q . r - 2*m3^2*t*k . r*p . p*q . r + 
+           2*m4^2*t*k . r*p . p*q . r + 2*t^2*k . k*k . r*p . p*q . r - 
+           4*m4^2*t*k . k*p . q*q . r + 4*m5^2*t*k . k*p . q*q . r + 
+           4*m3^2*t*k . r*p . q*q . r - 4*m4^2*t*k . r*p . q*q . r - 
+           4*t^2*k . k*k . r*p . q*q . r + 2*m3^4*p . r*q . r - 
+           4*m3^2*m4^2*p . r*q . r + 2*m4^4*p . r*q . r - 
+           4*m3^2*t*k . k*p . r*q . r - 4*m4^2*t*k . k*p . r*q . r + 
+           2*t^2*(k . k)^2*p . r*q . r + 2*m4^2*t*k . k*q . q*q . r - 
+           2*m5^2*t*k . k*q . q*q . r - 2*m3^2*t*k . r*q . q*q . r + 
+           2*m4^2*t*k . r*q . q*q . r + 2*t^2*k . k*k . r*q . q*q . r - 
+           m3^4*(q . r)^2 + 2*m3^2*m4^2*(q . r)^2 - m4^4*(q . r)^2 + 
+           2*m3^2*t*k . k*(q . r)^2 + 2*m4^2*t*k . k*(q . r)^2 - 
+           t^2*(k . k)^2*(q . r)^2 + m3^4*k . k*r . r + 
+           2*m3^2*(-m3^2 + m4^2 - t*k . k)*k . p*r . r + 
+           2*m3^2*(m3^2 - m4^2 + t*k . k)*k . q*r . r + 2*m3^2*t*k . p*k . r*
+            r . r - 2*m3^2*t*k . q*k . r*r . r + m3^4*p . p*r . r - 
+           2*m3^2*m4^2*p . p*r . r + m4^4*p . p*r . r - 2*m5^2*t*k . k*p . p*
+            r . r + t^2*(k . k)^2*p . p*r . r + 2*t*(-m3^2 + m4^2 - t*k . k)*
+            k . p*p . p*r . r + 2*t*(m3^2 - m4^2 + t*k . k)*k . q*p . p*
+            r . r - 2*m3^2*t*k . r*p . p*r . r + 2*m4^2*t*k . r*p . p*r . r + 
+           2*t^2*k . k*k . r*p . p*r . r + t^2*k . k*(p . p)^2*r . r - 
+           2*m3^4*p . q*r . r + 4*m3^2*m4^2*p . q*r . r - 
+           2*m4^4*p . q*r . r + 4*m5^2*t*k . k*p . q*r . r - 
+           2*t^2*(k . k)^2*p . q*r . r - 4*t*(-m3^2 + m4^2 - t*k . k)*k . p*
+            p . q*r . r - 4*t*(m3^2 - m4^2 + t*k . k)*k . q*p . q*r . r + 
+           4*m3^2*t*k . r*p . q*r . r - 4*m4^2*t*k . r*p . q*r . r - 
+           4*t^2*k . k*k . r*p . q*r . r - 4*t^2*k . k*p . p*p . q*r . r + 
+           4*t^2*k . k*(p . q)^2*r . r - 2*m3^2*t*k . k*p . r*r . r - 
+           2*t^2*k . k*p . p*p . r*r . r + 4*t^2*k . k*p . q*p . r*r . r + 
+           m3^4*q . q*r . r - 2*m3^2*m4^2*q . q*r . r + m4^4*q . q*r . r - 
+           2*m5^2*t*k . k*q . q*r . r + t^2*(k . k)^2*q . q*r . r + 
+           2*t*(-m3^2 + m4^2 - t*k . k)*k . p*q . q*r . r + 
+           2*t*(m3^2 - m4^2 + t*k . k)*k . q*q . q*r . r - 
+           2*m3^2*t*k . r*q . q*r . r + 2*m4^2*t*k . r*q . q*r . r + 
+           2*t^2*k . k*k . r*q . q*r . r + 2*t^2*k . p*k . r*q . q*r . r - 
+           2*t^2*k . q*k . r*q . q*r . r + 2*t^2*k . k*p . p*q . q*r . r - 
+           4*t^2*k . k*p . q*q . q*r . r - 2*t^2*k . k*p . r*q . q*r . r + 
+           t^2*k . k*(q . q)^2*r . r + 2*m3^2*t*k . k*q . r*r . r + 
+           2*t^2*k . k*p . p*q . r*r . r - 4*t^2*k . k*p . q*q . r*r . r + 
+           2*t^2*k . k*q . q*q . r*r . r + t^2*k . k*p . p*(r . r)^2 - 
+           2*t^2*k . k*p . q*(r . r)^2 + t^2*k . k*q . q*(r . r)^2 + 
+           2*t*k . p*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+           2*t*k . q*k . r*p . p*(m4^2 - m5^2 + t*r . r) - 
+           4*t*k . p*k . r*p . q*(m4^2 - m5^2 + t*r . r) + 
+           4*t*k . q*k . r*p . q*(m4^2 - m5^2 + t*r . r) - 
+           2*(-m3^2 + m4^2 - t*k . k)*k . p*p . r*(m4^2 - m5^2 + t*r . r) - 
+           2*(m3^2 - m4^2 + t*k . k)*k . q*p . r*(m4^2 - m5^2 + t*r . r) + 
+           2*(-m3^2 + m4^2 - t*k . k)*k . p*q . r*(m4^2 - m5^2 + t*r . r) + 
+           2*(m3^2 - m4^2 + t*k . k)*k . q*q . r*(m4^2 - m5^2 + t*r . r) - 
+           (k . p)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+             2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+             4*t*k . r*(m4^2 - m5^2 + t*r . r)) + 2*k . p*k . q*
+            ((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 2*(2*m3^2 - m4^2 + m5^2)*t*
+              r . r + t^2*(r . r)^2 + 4*t*k . r*(m4^2 - m5^2 + t*r . r)) - 
+           (k . q)^2*((m4^2 - m5^2)^2 + 4*t^2*(k . r)^2 - 
+             2*(2*m3^2 - m4^2 + m5^2)*t*r . r + t^2*(r . r)^2 + 
+             4*t*k . r*(m4^2 - m5^2 + t*r . r)))))/3)
