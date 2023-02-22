@@ -1,9 +1,9 @@
 # HodgeFeynmanGraphs
-This repository constains 'sagemath' worksheet that complement the analysis made in the paper
+This repository constains `sagemath` worksheet that complement the analysis made in the paper
 *Motivic geometry of two-loop Feynman integrals*
 by [Charles F. Doran](https://www.charlesdoran.net), [Andrew Harder](https://math.cas.lehigh.edu/andrew-harder) and [Pierre Vanhove](https://pierrevanhove.github.io) and Eric Pichon-Pharabod
 
-The detailed 'sagemath' worksheets and their link to relevant sections in the paper are
+The detailed `sagemath` worksheets and their link to relevant sections in the paper are
 
 * The motive for the [double-box graph](https://nbviewer.org/github/pierrevanhove/PicardFuchs/blob/main/Double-Box.ipynb) detailed in section 5.3
 * The motive for the [Pentabox graph](https://nbviewer.org/github/pierrevanhove/PicardFuchs/blob/main/Pentabox.ipynb) detailed in section 5.4
