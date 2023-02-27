@@ -6,7 +6,7 @@ by [Charles F. Doran](https://www.charlesdoran.net), [Andrew Harder](https://mat
 The detailed `sagemath` worksheets and their link to relevant sections in the paper are
 
 * The motive for the [double-box graph](https://nbviewer.org/github/pierrevanhove/MotivesFeynmanGraphs/blob/main/Double-Box.ipynb) detailed in section 5.3
-* The elliptic curve for the [Pentabox graph](https://nbviewer.org/github/pierrevanhove/MotivesFeynmanGraphs/blob/main/Pentabox-Graph.ipynb) of theorem 5.16. The singularities of the Pentabox quadric fibration are singularities of the Pentabox differential operators as checked in [Pentabox singularities](https://nbviewer.org/github/pierrevanhove/MotivesFeynmanGraphs/blob/main/Pentabox-singularities.ipynb)
+* The elliptic curve for the [Pentabox graph](https://nbviewer.org/github/pierrevanhove/MotivesFeynmanGraphs/blob/main/Pentabox-Graph.ipynb) of theorem 5.16 of section 5.4. The singularities of the Pentabox quadric fibration are singularities of the Pentabox differential operators as checked in [Pentabox singularities](https://nbviewer.org/github/pierrevanhove/MotivesFeynmanGraphs/blob/main/Pentabox-singularities.ipynb)
 * The motive for the [House graph](https://nbviewer.org/github/pierrevanhove/MotivesFeynmanGraphs/blob/main/House.ipynb) detailed in section 6.1
 * The motive for the [Kite graph](https://nbviewer.org/github/pierrevanhove/MotivesFeynmanGraphs/blob/main/Kite.ipynb) detailed in section 6.2
 * The motive for the [Observatory graph](https://nbviewer.org/github/pierrevanhove/MotivesFeynmanGraphs/blob/main/Observatory.ipynb) detailed in section 7.4
