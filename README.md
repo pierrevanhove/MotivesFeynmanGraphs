@@ -1,6 +1,6 @@
 # MotivesFeynmanGraphs
 This repository constains `sagemath` worksheet that complement the analysis made in the paper
-*Motivic geometry of two-loop Feynman integrals*
+[Motivic geometry of two-loop Feynman integrals](https://arxiv.org/abs/2302.14840)
 by [Charles F. Doran](https://www.charlesdoran.net), [Andrew Harder](https://math.cas.lehigh.edu/andrew-harder) and [Pierre Vanhove](https://pierrevanhove.github.io) and Eric Pichon-Pharabod
 
 The detailed `sagemath` worksheets and their link to relevant sections in the paper are
